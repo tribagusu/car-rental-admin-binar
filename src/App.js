@@ -1,14 +1,15 @@
-import React from "react"
+import { Route, Routes } from "react-router-dom"
+import Dashboard from "./pages/Dashboard"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 function App() {
   return (
-    <div className="row">
-      <div className=" d-f col-12-xs justify-center gap-2">
-        <h1>tes</h1>
-        <h1>tes</h1>
-        <h1>tes</h1>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="register" element={<Register />} />
+      <Route path="login" element={<Login />} />
+    </Routes>
   )
 }
 

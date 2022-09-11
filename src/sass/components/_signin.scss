@@ -1,0 +1,65 @@
+.signin {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 900px;
+
+    .signin-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+
+      .logo {
+        align-self: flex-start;
+      }
+
+      h2 {
+        align-self: flex-start;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 370px;
+
+        * {
+          margin-bottom: 20px;
+        }
+
+        input {
+          border: 1px solid #d0d0d0;
+          border-radius: 2px;
+          width: 370px;
+          font-weight: 300;
+          padding: 10px;
+          background: #fff;
+        }
+
+        .label {
+          margin-bottom: 5px;
+        }
+
+        button {
+          margin-top: 20px;
+          background: $success;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    width: 720px;
+    height: 100%;
+    flex-direction: column;
+    background: $primary;
+  }
+}
