@@ -1,19 +1,28 @@
-@mixin btn($bg-color: #5cb85f) {
+@mixin btn($bg: $success) {
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
   color: #fff;
-  border: 0;
+  border: 1px solid $bg;
   padding: $base-padding $base-padding * 2;
   border-radius: $base-border-radius / 3;
-  background-color: $bg-color;
+  background-color: $bg;
 }
 
 .btn {
   @include btn;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $success;
+    color: $success;
+  }
 }
 
 .btn-primary {
-  @include btn;
-  background-color: $primary;
+  @include btn($bg: $primary);
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $primary;
+    color: $primary;
+  }
 }

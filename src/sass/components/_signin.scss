@@ -1,17 +1,15 @@
 .signin {
   display: flex;
-  align-items: center;
   height: 100vh;
 
   .left {
-    display: flex;
-    width: 1433px;
-    flex-direction: column;
-    background: $primary;
+    max-width: 1433px;
+    height: 100%;
+    background-color: $primary;
 
     img {
-      width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -35,32 +33,6 @@
 
       h2 {
         align-self: flex-start;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 1rem;
-
-        * {
-          margin-bottom: 5px;
-        }
-
-        .signin-email,
-        .signin-password {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-        }
-
-        input {
-          border: 1px solid #d0d0d0;
-          border-radius: 2px;
-          font-weight: 300;
-          padding: 10px;
-          background: #fff;
-        }
       }
     }
   }

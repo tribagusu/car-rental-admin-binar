@@ -1,0 +1,25 @@
+.form-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+
+  * {
+    margin-bottom: 5px;
+  }
+
+  .signin-email,
+  .signin-password {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  input {
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-weight: 300;
+    padding: 10px;
+    background: #fff;
+  }
+}
