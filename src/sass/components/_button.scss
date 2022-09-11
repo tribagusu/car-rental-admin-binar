@@ -1,0 +1,19 @@
+@mixin btn($bg-color: #5cb85f) {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  border: 0;
+  padding: $base-padding $base-padding * 2;
+  border-radius: $base-border-radius / 3;
+  background-color: $bg-color;
+}
+
+.btn {
+  @include btn;
+}
+
+.btn-primary {
+  @include btn;
+  background-color: $primary;
+}
