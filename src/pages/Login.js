@@ -18,6 +18,16 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const payload = {
+      email,
+      password,
+    }
+    axios
+      .post("https://bootcamp-rent-car.herokuapp.com/admin/auth/login", payload)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => err.message)
   }
 
   const props = {
