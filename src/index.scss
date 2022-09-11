@@ -5,7 +5,10 @@
 @import "./sass/abstracts/grid";
 
 // components & utils
+@import "./sass/layouts/navbar";
+@import "./sass/layouts/sidebar";
 @import "./sass/components/button";
+@import "./sass/components/card";
 
 // utilities
 @import "./sass/abstracts/utilities";

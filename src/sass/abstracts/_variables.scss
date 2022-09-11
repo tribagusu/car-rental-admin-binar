@@ -1,14 +1,14 @@
 //# theme colors
 $primary: #0d28a6 !default;
 $secondary: #cfd4ed;
-$error: #fa2c5a;
+$danger: #fa2c5a;
 $success: #5cb85f;
 
 //# color palette
 $colors: (
   "primary": $primary,
   "secondary": $secondary,
-  "error": $error,
+  "danger": $danger,
   "success": $success,
   "gray": #e5e5e5,
   "black": black,
@@ -21,7 +21,7 @@ $base-margin: 10px;
 
 //# borders
 $base-border-thickness: 1px;
-$base-border-radius: 10px;
+$base-border-radius: 8px;
 
 //# box-shadow
 $base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
