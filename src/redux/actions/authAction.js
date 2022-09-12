@@ -2,7 +2,7 @@ import axios from "axios"
 import TYPES from "../types"
 import swal from "sweetalert"
 
-export const handleLogin = (payload, setErrMsg, setIsLoggedIn) => {
+export const handleLogin = (payload, setErrMsg) => {
   return (dispatch) => {
     axios
       .post("https://bootcamp-rent-car.herokuapp.com/admin/auth/login", payload)
@@ -13,15 +13,12 @@ export const handleLogin = (payload, setErrMsg, setIsLoggedIn) => {
           type: TYPES.POST_LOGIN,
           payload: res.data.access_token,
         })
-        if (res.data.access_token) {
-          swal({
-            title: "Welcome!",
-            text: "Logged in successfully",
-            icon: "success",
-            timer: 1500,
-          })
-          setIsLoggedIn(true)
-        }
+        swal({
+          title: "Welcome!",
+          text: "Logged in successfully",
+          icon: "success",
+          timer: 1500,
+        })
       })
       .catch((err) => {
         console.log(err)

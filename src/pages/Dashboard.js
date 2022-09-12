@@ -1,26 +1,24 @@
 import { Navigate } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { useSelector } from "react-redux"
 
 // components
 import Navbar from "../layouts/Navbar"
 
 const Dashboard = () => {
-  //   const [user, setUser] = useState(false)
-  //   const { token } = useSelector((state) => state.auth)
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
   const user = localStorage.getItem("token")
 
-  //   useEffect(() => {
-  //     const checkUser = () => {
-  //       const user = localStorage.getItem("token")
-  //       if (user) {
-  //         setUser(true)
-  //       } else {
-  //         setUser(false)
-  //       }
+  // useEffect(() => {
+  //   const checkUser = () => {
+  //     const user = localStorage.getItem("token")
+  //     if (user) {
+  //       setIsLoggedIn(true)
+  //     } else {
+  //       setIsLoggedIn(false)
   //     }
-  //     checkUser()
-  //   }, [])
+  //   }
+  //   checkUser()
+  // }, [])
 
   return (
     <>
