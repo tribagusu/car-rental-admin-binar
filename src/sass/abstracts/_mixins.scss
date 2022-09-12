@@ -1,0 +1,9 @@
+@mixin d-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-center {
+  @include d-center;
+}

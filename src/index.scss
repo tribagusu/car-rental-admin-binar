@@ -3,12 +3,13 @@
 @import "./sass/abstracts/base";
 @import "./sass/abstracts/breakpoints";
 @import "./sass/abstracts/grid";
+@import "./sass/abstracts/mixins";
 
 // components & utils
 @import "./sass/layouts/navbar";
 @import "./sass/layouts/sidebar";
 @import "./sass/components/button";
-@import "./sass/components/card";
+@import "./sass/components/warningLoginCard";
 @import "./sass/components/signin";
 @import "./sass/components/formLogin";
 

@@ -1,12 +1,21 @@
-import { useState } from "react"
-import axios from "axios"
+import { useState, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import swal from "sweetalert"
+import { useNavigate } from "react-router-dom"
 
 // components
 import SignIn from "../components/SignIn"
+import { handleLogin } from "../redux/actions/authAction"
 
 const Login = () => {
+  // state
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState()
+  const [password, setPassword] = useState("")
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const { token } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
@@ -22,13 +31,27 @@ const Login = () => {
       email,
       password,
     }
-    axios
-      .post("https://bootcamp-rent-car.herokuapp.com/admin/auth/login", payload)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => err.message)
+    dispatch(handleLogin(payload))
   }
+
+  //   useEffect(() => {
+  //     const checkUser = () => {
+  //       const token = localStorage.getItem("token")
+  //       if (!token) {
+  //         setIsLoggedIn(true)
+  //       } else {
+  //         setIsLoggedIn(false)
+  //       }
+  //     }
+  //     checkUser()
+  //   }, [])
+
+  //   swal({
+  //     title: "Welcome!",
+  //     text: "Logged in successfully",
+  //     icon: "success",
+  //     timer: 1500,
+  //   })
 
   const props = {
     email,
@@ -36,6 +59,7 @@ const Login = () => {
     handleEmail,
     handlePassword,
     handleSubmit,
+    isLoggedIn,
   }
 
   return (
