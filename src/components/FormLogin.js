@@ -1,16 +1,29 @@
 const FormLogin = (props) => {
-  const { email, password, handleEmail, handlePassword, handleSubmit } = props
+  const { email, password, setEmail, setPassword, handleSubmit } = props
 
   return (
     <>
       <form className="form-login" onSubmit={handleSubmit}>
         <div className="signin-email">
-          <label>Email</label>
-          <input onChange={handleEmail} value={email} type="text" />
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            type="text"
+            autoComplete="off"
+            required
+          />
         </div>
         <div className="signin-password">
-          <label>Password</label>
-          <input onChange={handlePassword} value={password} type="password" />
+          <label htmlFor="password">Password</label>
+          <input
+            id="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            type="password"
+            required
+          />
         </div>
         <button className="btn-primary">Sign In</button>
       </form>

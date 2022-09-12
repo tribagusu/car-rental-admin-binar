@@ -1,21 +1,12 @@
 import { Link } from "react-router-dom"
 import cover from "../assets/cover-login.png"
-import { useState, useEffect } from "react"
 
 // components
 import FormLogin from "./FormLogin"
 import WarningLoginCard from "./Card/WarningLoginCard"
 
 const SignIn = (props) => {
-  const { isLoggedIn } = props
-  //   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-  //   useEffect(() => {
-  //     const user = localStorage.getItem("token")
-  //     if (user) {
-  //       setIsLoggedIn(true)
-  //     }
-  //   }, [])
+  const { errMsg } = props
 
   return (
     <>
@@ -31,7 +22,7 @@ const SignIn = (props) => {
               </Link>
             </div>
             <h2>Welcome Admin BCR!</h2>
-            {!isLoggedIn && <WarningLoginCard />}
+            {errMsg && <WarningLoginCard />}
             <FormLogin {...props} />
           </div>
         </div>

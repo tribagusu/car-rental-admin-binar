@@ -12,18 +12,11 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [errMsg, setErrMsg] = useState(false)
 
   const { token } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value)
-  }
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value)
-  }
+  // const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -31,35 +24,17 @@ const Login = () => {
       email,
       password,
     }
-    dispatch(handleLogin(payload))
+    dispatch(handleLogin(payload, setErrMsg, setIsLoggedIn))
   }
-
-  //   useEffect(() => {
-  //     const checkUser = () => {
-  //       const token = localStorage.getItem("token")
-  //       if (!token) {
-  //         setIsLoggedIn(true)
-  //       } else {
-  //         setIsLoggedIn(false)
-  //       }
-  //     }
-  //     checkUser()
-  //   }, [])
-
-  //   swal({
-  //     title: "Welcome!",
-  //     text: "Logged in successfully",
-  //     icon: "success",
-  //     timer: 1500,
-  //   })
 
   const props = {
     email,
     password,
-    handleEmail,
-    handlePassword,
+    setEmail,
+    setPassword,
     handleSubmit,
     isLoggedIn,
+    errMsg,
   }
 
   return (
