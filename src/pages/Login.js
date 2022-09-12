@@ -37,7 +37,9 @@ const Login = () => {
   }
 
   return (
-    <div>{!user ? <SignIn {...props} /> : <Navigate to="/" replace />}</div>
+    <div>
+      {!user ? <SignIn {...props} /> : <Navigate to="/dashboard" replace />}
+    </div>
   )
 }
 

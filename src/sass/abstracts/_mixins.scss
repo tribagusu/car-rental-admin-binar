@@ -1,9 +1,9 @@
-@mixin d-center() {
+@mixin df-center() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.d-center {
-  @include d-center;
+.df-center {
+  @include df-center;
 }

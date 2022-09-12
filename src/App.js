@@ -5,9 +5,9 @@ import Login from "./pages/Login"
 function App() {
   return (
     <Routes>
-      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/" element={<Navigate to="dashboard" replace />} />
-      <Route path="login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   )
 }

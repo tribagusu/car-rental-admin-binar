@@ -26,3 +26,23 @@
     color: $primary;
   }
 }
+
+.btn-outlined {
+  @include btn;
+  background-color: transparent;
+  border: 1px solid $success;
+  color: $success;
+  &:hover {
+    @include btn;
+  }
+}
+
+.btn-outlined-primary {
+  @include btn;
+  background-color: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+  &:hover {
+    @include btn($bg: $primary);
+  }
+}

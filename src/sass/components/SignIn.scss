@@ -3,12 +3,13 @@
   height: 100vh;
 
   .left {
-    max-width: 1433px;
+    width: 100%;
     height: 100%;
     background-color: $primary;
 
     img {
       height: 100%;
+      width: 100%;
       object-fit: cover;
     }
   }
@@ -16,13 +17,10 @@
   .right {
     display: flex;
     flex-direction: column;
-    min-width: 500px;
+    min-width: 600px;
 
     .signin-container {
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       margin: auto;
       width: 370px;
       gap: 1rem;

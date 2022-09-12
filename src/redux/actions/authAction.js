@@ -2,7 +2,7 @@ import axios from "axios"
 import TYPES from "../types"
 import swal from "sweetalert"
 
-export const handleLogin = (payload, setErrMsg) => {
+export const handleLogin = (payload, setErrMsg, navigate) => {
   return (dispatch) => {
     axios
       .post("https://bootcamp-rent-car.herokuapp.com/admin/auth/login", payload)
@@ -19,6 +19,7 @@ export const handleLogin = (payload, setErrMsg) => {
           icon: "success",
           timer: 1500,
         })
+        navigate("/dashboard")
       })
       .catch((err) => {
         console.log(err)

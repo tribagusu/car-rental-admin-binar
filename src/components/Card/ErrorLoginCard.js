@@ -1,8 +1,8 @@
 import React from "react"
 
-const WarningLoginCard = () => {
+const ErrorLoginCard = () => {
   return (
-    <div className="warning-login-card d-center">
+    <div className="error-login-card d-center">
       <p>
         Masukkan username dan password yang benar. Perhatikan penggunaan huruf
         kapital.
@@ -11,4 +11,4 @@ const WarningLoginCard = () => {
   )
 }
 
-export default WarningLoginCard
+export default ErrorLoginCard

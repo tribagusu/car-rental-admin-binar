@@ -3,7 +3,7 @@ import cover from "../assets/cover-login.png"
 
 // components
 import FormLogin from "./FormLogin"
-import WarningLoginCard from "./Card/WarningLoginCard"
+import ErrorLoginCard from "./Card/ErrorLoginCard"
 
 const SignIn = (props) => {
   const { errMsg } = props
@@ -14,15 +14,15 @@ const SignIn = (props) => {
         <div className="left">
           <img src={cover} alt="cover-login" />
         </div>
-        <div className="right">
-          <div className="signin-container">
+        <div className="right df-center">
+          <div className="signin-container df-center">
             <div className="logo">
               <Link to="/">
                 <h3>BCR LOGO</h3>
               </Link>
             </div>
             <h2>Welcome Admin BCR!</h2>
-            {errMsg && <WarningLoginCard />}
+            {errMsg && <ErrorLoginCard />}
             <FormLogin {...props} />
           </div>
         </div>
