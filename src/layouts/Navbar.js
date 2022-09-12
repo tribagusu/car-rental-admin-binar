@@ -3,8 +3,8 @@ import dropdownIcon from "../assets/dropdown-icon.png"
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="nav-container">
+    <nav className="navbar p-0">
+      <div className="navbar nav-container">
         <div className="nav-menu df-center">
           <img src={menuIcon} alt="menu" />
         </div>

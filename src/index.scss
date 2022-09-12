@@ -10,9 +10,11 @@
 // components & utils
 @import "./sass/layouts/Navbar";
 @import "./sass/layouts/Sidebar";
+@import "./sass/layouts/SideMenu";
 @import "./sass/components/ErrorLoginCard";
 @import "./sass/components/SignIn";
 @import "./sass/components/FormLogin";
+@import "./sass/components/Breadcrumb";
 
 // utilities
 @import "./sass/abstracts/utilities";
