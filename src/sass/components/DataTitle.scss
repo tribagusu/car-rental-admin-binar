@@ -1,8 +1,10 @@
 .data-title {
   width: 350px;
   margin-top: 80px;
+  margin-left: 20px;
 
   .data-title-container {
+    display: flex;
     gap: 10px;
 
     figure {

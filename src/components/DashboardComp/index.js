@@ -1,7 +1,7 @@
 import React from "react"
 import Breadcrumb from "./Breadcrumb"
 import DataTitle from "./DataTitle"
-import MonthFilter from "./MonthFilter"
+import ChartFilter from "./ChartFilter"
 import RentedChart from "./RentedChart"
 
 const DashboardComp = () => {
@@ -10,7 +10,7 @@ const DashboardComp = () => {
       <main className="dashboard-container ">
         <Breadcrumb />
         <DataTitle />
-        {/* <MonthFilter /> */}
+        <ChartFilter />
         {/* <RentedChart /> */}
       </main>
     </section>
