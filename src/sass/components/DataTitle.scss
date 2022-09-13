@@ -1,0 +1,14 @@
+.data-title {
+  width: 350px;
+  margin-top: 80px;
+
+  .data-title-container {
+    gap: 10px;
+
+    figure {
+      width: 5px;
+      height: 24px;
+      background-color: $primary;
+    }
+  }
+}

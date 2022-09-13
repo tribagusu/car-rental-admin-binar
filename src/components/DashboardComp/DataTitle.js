@@ -1,7 +1,14 @@
 import React from "react"
 
 const DataTitle = () => {
-  return <div>DataTitle</div>
+  return (
+    <section className="data-title">
+      <div className="data-title-container df-center">
+        <figure></figure>
+        <h3>Rented Car Data Visualization</h3>
+      </div>
+    </section>
+  )
 }
 
 export default DataTitle

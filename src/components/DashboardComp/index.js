@@ -9,7 +9,7 @@ const DashboardComp = () => {
     <section className="dashboard">
       <main className="dashboard-container ">
         <Breadcrumb />
-        {/* <DataTitle /> */}
+        <DataTitle />
         {/* <MonthFilter /> */}
         {/* <RentedChart /> */}
       </main>
