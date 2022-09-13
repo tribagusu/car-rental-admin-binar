@@ -5,12 +5,12 @@
 @import "./sass/abstracts/grid";
 @import "./sass/abstracts/mixins";
 @import "./sass/abstracts/button";
-@import "./sass/abstracts/navbar";
+@import "./sass/abstracts/header";
 
 // components & utils
-@import "./sass/layouts/Navbar";
+@import "./sass/layouts/Header";
 @import "./sass/layouts/Sidebar";
-@import "./sass/layouts/SideMenu";
+@import "./sass/layouts/Navbar";
 @import "./sass/components/ErrorLoginCard";
 @import "./sass/components/SignIn";
 @import "./sass/components/FormLogin";
@@ -18,6 +18,7 @@
 @import "./sass/components/DashboardComp";
 @import "./sass/components/DataTitle";
 @import "./sass/components/ChartFilter";
+@import "./sass/components/RentedCarChart";
 
 // utilities
 @import "./sass/abstracts/utilities";

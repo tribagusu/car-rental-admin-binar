@@ -1,3 +1,4 @@
+// display
 @mixin df-center() {
   display: flex;
   justify-content: center;
@@ -6,4 +7,17 @@
 
 .df-center {
   @include df-center;
+}
+
+// background
+@mixin bg($bg: $primary) {
+  background: $bg;
+}
+
+.bg-secondary {
+  @include bg($secondary);
+}
+
+.bg-washout {
+  @include bg(#5568c1);
 }

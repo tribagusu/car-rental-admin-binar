@@ -8,7 +8,7 @@ const Sidebar = () => {
         <span></span>
       </div>
       <div className="sidebar-menu ">
-        <div className="menu-dashboard df-center">
+        <div className="menu-dashboard df-center bg-washout">
           <img src={dashboardIcon} alt="dashboard" />
           <h4>Dashboard</h4>
         </div>

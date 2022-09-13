@@ -2,8 +2,9 @@ import { Navigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 // components
-import Navbar from "../layouts/Navbar"
+import Header from "../layouts/Header"
 import Sidebar from "../layouts/Sidebar"
+import Navbar from "../layouts/Navbar"
 import DashboardComp from "../components/DashboardComp"
 
 const Dashboard = () => {
@@ -27,6 +28,7 @@ const Dashboard = () => {
       {user ? (
         <div>
           <Navbar />
+          <Header />
           <Sidebar />
           <DashboardComp />
         </div>

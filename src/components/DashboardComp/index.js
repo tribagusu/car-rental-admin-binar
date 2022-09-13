@@ -2,7 +2,7 @@ import React from "react"
 import Breadcrumb from "./Breadcrumb"
 import DataTitle from "./DataTitle"
 import ChartFilter from "./ChartFilter"
-import RentedChart from "./RentedChart"
+import RentedCarChart from "./RentedCarChart"
 
 const DashboardComp = () => {
   return (
@@ -11,7 +11,7 @@ const DashboardComp = () => {
         <Breadcrumb />
         <DataTitle />
         <ChartFilter />
-        {/* <RentedChart /> */}
+        <RentedCarChart />
       </main>
     </section>
   )

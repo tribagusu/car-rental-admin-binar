@@ -1,0 +1,57 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 80px;
+  height: 70px;
+  width: 100%;
+  background: #fff;
+
+  .header-left {
+    margin-left: 10px;
+
+    .header-logo {
+      width: 100px;
+      height: 34px;
+      background: $secondary;
+    }
+
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      margin-left: 100px;
+      cursor: pointer;
+    }
+  }
+
+  .header-main {
+    gap: 2rem;
+    margin-right: 6rem;
+
+    .header-search {
+      input {
+        width: 174px;
+        height: 34px;
+        border: 1px solid #d0d0d0;
+        border-radius: 2px;
+        padding: 0 1rem;
+      }
+
+      button {
+        height: 36px;
+      }
+    }
+
+    .header-user {
+      gap: 1rem;
+
+      .user-logo {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: $secondary;
+      }
+    }
+  }
+}
