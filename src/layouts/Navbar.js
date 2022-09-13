@@ -10,7 +10,7 @@ const Navbar = () => {
         </div>
         <div className="nav-main df-center">
           <div className="nav-search df-center">
-            <input type="text" />
+            <input type="text" placeholder="Search" />
             <button className="btn-outlined-primary">Search</button>
           </div>
           <div className="nav-user df-center ">

@@ -14,6 +14,7 @@ const Login = () => {
   const [errMsg, setErrMsg] = useState(false)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const location = useLocation()
   // const from = location.state?.from?.pathname || "/"
   const user = localStorage.getItem("token")
@@ -24,7 +25,7 @@ const Login = () => {
       email,
       password,
     }
-    dispatch(handleLogin(payload, setErrMsg))
+    dispatch(handleLogin(payload, setErrMsg, navigate))
   }
 
   const props = {

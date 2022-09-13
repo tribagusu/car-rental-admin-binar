@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 // components
 import Navbar from "../layouts/Navbar"
 import Sidebar from "../layouts/Sidebar"
+import DashboardComp from "../components/DashboardComp"
 
 const Dashboard = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -27,6 +28,7 @@ const Dashboard = () => {
         <div>
           <Navbar />
           <Sidebar />
+          <DashboardComp />
         </div>
       ) : (
         <Navigate to="/login" replace />
