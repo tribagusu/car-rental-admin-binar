@@ -7,7 +7,7 @@ import RentedCarChart from "./RentedCarChart"
 const DashboardComp = () => {
   return (
     <section className="dashboard">
-      <main className="dashboard-container ">
+      <main className="dashboard-container">
         <Breadcrumb />
         <DataTitle />
         <ChartFilter />

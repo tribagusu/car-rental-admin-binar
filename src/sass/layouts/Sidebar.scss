@@ -19,6 +19,10 @@
   .sidebar-menu {
     cursor: pointer;
 
+    .active > div {
+      background: #5568c1;
+    }
+
     .menu-dashboard {
       flex-direction: column;
       width: 80px;

@@ -1,14 +1,25 @@
 import { Route, Routes, Navigate } from "react-router-dom"
+
+// pages
 import Dashboard from "./pages/Dashboard"
 import Login from "./pages/Login"
+import Cars from "./pages/Cars/Cars"
+import Layout from "./pages/Layout"
+import AddCar from "./pages/Cars/AddCar"
 
 function App() {
   return (
-    <Routes>
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/" element={<Navigate to="dashboard" replace />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <>
+      <Layout />
+      <Routes>
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="cars" element={<Cars />}>
+          <Route path="add-car" element={<AddCar />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="*" element={<Navigate to="dashboard" replace />} />
+      </Routes>
+    </>
   )
 }
 

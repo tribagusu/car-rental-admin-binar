@@ -2,13 +2,11 @@ import { Navigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 // components
-import Header from "../layouts/Header"
-import Sidebar from "../layouts/Sidebar"
-import Navbar from "../layouts/Navbar"
 import DashboardComp from "../components/DashboardComp"
 
 const Dashboard = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [open, setOpen] = useState(true)
   const user = localStorage.getItem("token")
 
   // useEffect(() => {
@@ -27,9 +25,6 @@ const Dashboard = () => {
     <>
       {user ? (
         <div>
-          <Navbar />
-          <Header />
-          <Sidebar />
           <DashboardComp />
         </div>
       ) : (

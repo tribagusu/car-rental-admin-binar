@@ -1,13 +1,13 @@
 import menuIcon from "../assets/menu-icon.png"
 import dropdownIcon from "../assets/dropdown-icon.png"
 
-const Header = () => {
+const Header = ({ toggle }) => {
   return (
     <header className="header p-0">
       <div className="header header-container">
         <div className="header-left df-center">
           <div className="header-logo"></div>
-          <div className="menu-icon df-center">
+          <div onClick={toggle} className="menu-icon df-center">
             <img src={menuIcon} alt="menu" />
           </div>
         </div>
