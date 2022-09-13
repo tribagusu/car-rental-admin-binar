@@ -7,11 +7,11 @@ import RentedChart from "./RentedChart"
 const DashboardComp = () => {
   return (
     <section className="dashboard">
-      <main className="dashboard-container df-center">
+      <main className="dashboard-container ">
         <Breadcrumb />
-        <DataTitle />
-        <MonthFilter />
-        <RentedChart />
+        {/* <DataTitle /> */}
+        {/* <MonthFilter /> */}
+        {/* <RentedChart /> */}
       </main>
     </section>
   )
