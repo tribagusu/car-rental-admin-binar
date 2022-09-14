@@ -1,11 +1,9 @@
-import arrowIcon from "../../assets/arrow-icon.png"
-
 const Breadcrumb = () => {
   return (
     <section className="breadcrumb">
-      <div className="breadcrumb-container ">
+      <div className="breadcrumb-container df-center ">
         <p>Dashboard</p>
-        <img src={arrowIcon} alt="arrow" />
+        <i class="uil uil-angle-right"></i>
         <small>Dashboard</small>
       </div>
     </section>

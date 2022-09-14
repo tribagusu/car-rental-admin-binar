@@ -1,6 +1,6 @@
 .breadcrumb {
   width: 200px;
-  margin-left: 200px;
+  margin-left: 210px;
 
   .breadcrumb-container {
     display: flex;
@@ -10,9 +10,8 @@
       font-weight: 600;
     }
 
-    img {
-      max-width: 100%;
-      max-height: 100%;
+    i {
+      font-size: 1.1rem;
     }
   }
 }

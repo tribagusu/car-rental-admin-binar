@@ -4,8 +4,10 @@ import { Route, Routes, Navigate } from "react-router-dom"
 import Dashboard from "./pages/Dashboard"
 import Login from "./pages/Login"
 import Cars from "./pages/Cars/Cars"
-import Layout from "./pages/Layout"
 import AddCar from "./pages/Cars/AddCar"
+
+//comp
+import Layout from "./layouts"
 
 function App() {
   return (
