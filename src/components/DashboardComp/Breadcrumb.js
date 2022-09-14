@@ -3,7 +3,7 @@ const Breadcrumb = () => {
     <section className="breadcrumb">
       <div className="breadcrumb-container df-center ">
         <p>Dashboard</p>
-        <i class="uil uil-angle-right"></i>
+        <i className="uil uil-angle-right"></i>
         <small>Dashboard</small>
       </div>
     </section>

@@ -6,7 +6,6 @@ import DashboardComp from "../components/DashboardComp"
 
 const Dashboard = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [open, setOpen] = useState(true)
   const user = localStorage.getItem("token")
 
   // useEffect(() => {
