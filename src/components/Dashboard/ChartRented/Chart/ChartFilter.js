@@ -1,31 +1,28 @@
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
-const ChartFilter = () => {
+const ChartFilter = (props) => {
+  const { handleMonth } = props
+
   // state
-  const [month, setMonth] = useState("")
+  const [value, setValue] = useState("")
 
-  // function
-  const handleMonth = (e) => {
-    setMonth(e.target.value)
-  }
-
-  useEffect(() => {}, [])
+  // console.log(value)
 
   return (
     <section className="chart-filter">
       <div className="chart-filter-container">
         <p>Month</p>
         <div className="filter">
-          <select value={month} onChange={handleMonth}>
-            <option value={"Sep"} defaultValue>
+          <select value={value} onChange={(e) => setValue(e.target.value)}>
+            <option value={"sep"} defaultValue>
               Sep - 2022
             </option>
-            <option value={"Oct"}>Oct - 2022</option>
-            <option value={"Nov"}>Nov - 2022</option>
-            <option value={"Dec"}>Dec - 2022</option>
+            <option value={"oct"}>Oct - 2022</option>
+            <option value={"nov"}>Nov - 2022</option>
+            <option value={"dec"}>Dec - 2022</option>
           </select>
-          <button onClick={() => console.log(month)} className="btn-primary">
+          <button onClick={() => handleMonth(value)} className="btn-primary">
             Go
           </button>
         </div>

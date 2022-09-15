@@ -1,7 +1,7 @@
 import axios from "axios"
 import moment from "moment/moment"
 
-export const getMonth = (setMonth, value) => {
+export const getOrderInDate = (setOrder, query) => {
   axios
     .get("https://bootcamp-rent-car.herokuapp.com/admin/order")
     .then((res) => {
@@ -14,8 +14,8 @@ export const getMonth = (setMonth, value) => {
           (element) => element.toLowerCase().indexOf(query.toLowerCase()) !== -1
         )
       }
-      const result = filterGetData(getData, value)
-      setMonth(result)
+      const result = filterGetData(getData, query)
+      setOrder(result)
     })
     .catch((err) => {
       console.log(err.message)

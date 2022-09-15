@@ -9,16 +9,30 @@ const Chart = React.lazy(() => import("./Chart/Chart"))
 const ChartRented = () => {
   const [month, setMonth] = useState({})
 
-  useEffect(() => {
-    getMonth(setMonth, "oct")
-  }, [])
+  const handleMonth = (value) => {
+    if (value === "sep") {
+      getMonth(setMonth, "sep")
+    } else if (value === "oct") {
+      getMonth(setMonth, "oct")
+    } else if (value === "nov") {
+      getMonth(setMonth, "nov")
+    } else if (value === "dec") {
+      getMonth(setMonth, "dec")
+    } else {
+      return value
+    }
+  }
+
+  const props = {
+    handleMonth,
+  }
 
   console.log(month)
 
   return (
     <>
       <ChartTitle />
-      <ChartFilter />
+      <ChartFilter {...props} />
       <Chart />
     </>
   )
