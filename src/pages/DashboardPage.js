@@ -2,9 +2,9 @@ import { Navigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 // components
-import DashboardComp from "../components/DashboardComp"
+import Dashboard from "../components/Dashboard"
 
-const Dashboard = () => {
+const DashboardPage = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
   const user = localStorage.getItem("token")
 
@@ -24,7 +24,7 @@ const Dashboard = () => {
     <>
       {user ? (
         <div>
-          <DashboardComp />
+          <Dashboard />
         </div>
       ) : (
         <Navigate to="/login" replace />
@@ -33,4 +33,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default DashboardPage

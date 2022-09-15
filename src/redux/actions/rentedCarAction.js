@@ -11,9 +11,9 @@ export const handleRentedDaily = () => {
       .then((res) => {
         dispatch({
           type: TYPES.GET_RENTED_CAR_DAY,
-          payload: res.data.map((data) =>
-            moment(data.start_rent_at).format("D MMM")
-          ),
+          payload: res.data
+            .map((data) => moment(data.start_rent_at).format("D MMM"))
+            .sort(),
         })
       })
       .catch((err) => {
@@ -29,9 +29,9 @@ export const handleRentedMonthly = () => {
       .then((res) => {
         dispatch({
           type: TYPES.GET_RENTED_CAR_MONTH,
-          payload: res.data.map((data) =>
-            moment(data.start_rent_at).format("MMM - YYYY")
-          ),
+          payload: res.data
+            .map((data) => moment(data.start_rent_at).format("MMM [-] YYYY"))
+            .sort(),
         })
       })
       .catch((err) => {
@@ -40,9 +40,9 @@ export const handleRentedMonthly = () => {
   }
 }
 
-export const setTheMonth = (e) => {
+export const setTheMonth = (month) => {
   return {
     type: TYPES.THE_MONTH,
-    payload: e.target.value,
+    payload: month,
   }
 }

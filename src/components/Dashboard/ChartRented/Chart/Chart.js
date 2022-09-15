@@ -8,11 +8,11 @@ import {
   LinearScale,
   BarElement,
 } from "chart.js"
-import { orderList } from "../../data/dataChart"
+import { orderList } from "../../../../data/dataChart"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement)
 
-const RentedCarChart = () => {
+const Chart = () => {
   const [dataChart, setDataChart] = useState({
     labels: [],
     datasets: [
@@ -46,4 +46,4 @@ const RentedCarChart = () => {
   )
 }
 
-export default RentedCarChart
+export default Chart

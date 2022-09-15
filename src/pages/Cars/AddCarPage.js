@@ -1,6 +1,6 @@
 import React from "react"
 
-const AddCar = () => {
+const AddCarPage = () => {
   return (
     <div>
       AddCarsdfsdfsdfsdfsdfsdfdsf Lorem ipsum dolor sit amet consectetur,
@@ -18,4 +18,4 @@ const AddCar = () => {
   )
 }
 
-export default AddCar
+export default AddCarPage

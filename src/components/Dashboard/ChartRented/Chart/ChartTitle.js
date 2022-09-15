@@ -1,6 +1,4 @@
-import React from "react"
-
-const DataTitle = () => {
+const ChartTitle = () => {
   return (
     <section className="data-title">
       <div className="data-title-container">
@@ -11,4 +9,4 @@ const DataTitle = () => {
   )
 }
 
-export default DataTitle
+export default ChartTitle

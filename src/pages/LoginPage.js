@@ -4,10 +4,10 @@ import swal from "sweetalert"
 import { useNavigate, Navigate, useLocation } from "react-router-dom"
 
 // components
-import SignIn from "../components/SignIn"
+import Login from "../components/Login"
 import { handleLogin } from "../redux/actions/authAction"
 
-const Login = () => {
+const LoginPage = () => {
   // state
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -39,9 +39,9 @@ const Login = () => {
 
   return (
     <div>
-      {!user ? <SignIn {...props} /> : <Navigate to="/dashboard" replace />}
+      {!user ? <Login {...props} /> : <Navigate to="/dashboard" replace />}
     </div>
   )
 }
 
-export default Login
+export default LoginPage

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-import cover from "../assets/cover-login.png"
+import cover from "../../assets/cover-login.png"
 
 // components
 import FormLogin from "./FormLogin"
-import ErrorLoginCard from "./Card/ErrorLoginCard"
+import ErrorLoginCard from "./ErrorLoginCard"
 
-const SignIn = (props) => {
+const Login = (props) => {
   const { errMsg } = props
 
   return (
@@ -31,4 +31,4 @@ const SignIn = (props) => {
   )
 }
 
-export default SignIn
+export default Login

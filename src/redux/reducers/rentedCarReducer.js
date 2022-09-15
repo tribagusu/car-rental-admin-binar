@@ -1,9 +1,9 @@
 import TYPES from "../types"
 
 const initState = {
-  listDate: "",
+  listDay: "",
   listMonth: "",
-  theMonth: "test",
+  theMonth: "",
 }
 
 const rentedCarReducer = (state = initState, action) => {
@@ -11,7 +11,7 @@ const rentedCarReducer = (state = initState, action) => {
     case TYPES.GET_RENTED_CAR_DAY:
       return {
         ...state,
-        listDate: action.payload,
+        listDay: action.payload,
       }
 
     case TYPES.GET_RENTED_CAR_MONTH:
