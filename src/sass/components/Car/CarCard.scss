@@ -1,11 +1,13 @@
 .car-card-container {
   margin-top: 20px;
   height: 100vh;
-  border: 1px solid tan;
-  margin-left: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
 
   .car-card {
-    background: tan;
+    background: white;
     width: 351px;
     height: 482px;
     border-radius: 8px;
