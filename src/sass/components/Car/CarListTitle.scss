@@ -4,7 +4,13 @@
 
   .car-list-title-container {
     display: flex;
-    width: 350px;
+    justify-content: space-between;
     gap: 10px;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 }
