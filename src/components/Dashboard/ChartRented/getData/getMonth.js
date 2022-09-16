@@ -14,6 +14,7 @@ export const getMonth = (setMonth, value) => {
           (element) => element.toLowerCase().indexOf(query.toLowerCase()) !== -1
         )
       }
+
       const result = filterGetData(getData, value)
       setMonth(result)
     })

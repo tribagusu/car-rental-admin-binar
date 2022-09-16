@@ -1,11 +1,5 @@
-import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-
 const ChartFilter = (props) => {
-  const { handleMonth } = props
-
-  // state
-  const [value, setValue] = useState("")
+  const { handleMonth, value, setValue } = props
 
   // console.log(value)
 
@@ -14,7 +8,7 @@ const ChartFilter = (props) => {
       <div className="chart-filter-container">
         <p>Month</p>
         <div className="filter">
-          <select value={value} onChange={(e) => setValue(e.target.value)}>
+          <select onChange={(e) => setValue(e.target.value)}>
             <option value={"sep"} defaultValue>
               Sep - 2022
             </option>
