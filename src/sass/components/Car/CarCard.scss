@@ -1,6 +1,15 @@
 .car-card-container {
   margin-top: 20px;
   height: 100vh;
-  background: tan;
+  border: 1px solid tan;
   margin-left: 100px;
+
+  .car-card {
+    background: tan;
+    width: 351px;
+    height: 482px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
 }

@@ -7,7 +7,8 @@
     height: 100vh;
     left: 80px;
     position: sticky;
-    background: white;
+    position: -webkit-sticky;
     top: 0;
+    background: white;
   }
 }

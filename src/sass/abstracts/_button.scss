@@ -27,6 +27,15 @@
   }
 }
 
+.btn-danger {
+  @include btn($bg: $danger);
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $danger;
+    color: $danger;
+  }
+}
+
 .btn-outlined {
   @include btn;
   background-color: transparent;
@@ -44,5 +53,15 @@
   color: $primary;
   &:hover {
     @include btn($bg: $primary);
+  }
+}
+
+.btn-outlined-danger {
+  @include btn;
+  background-color: transparent;
+  border: 1px solid $danger;
+  color: $danger;
+  &:hover {
+    @include btn($bg: $danger);
   }
 }
