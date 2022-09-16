@@ -6,7 +6,7 @@ const ListTitle = () => {
       <div className="list-title-container">
         <h2>Dashboard</h2>
         <aside>
-          <figure></figure>
+          <figure />
           <h3>List Order</h3>
         </aside>
       </div>

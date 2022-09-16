@@ -24,25 +24,12 @@
       background: #5568c1;
     }
 
-    .menu-dashboard {
-      flex-direction: column;
-      width: 80px;
-      height: 70px;
-
-      h4 {
-        font-size: 12px;
-        color: white;
-      }
-    }
+    .menu-dashboard,
     .menu-cars {
       flex-direction: column;
       width: 80px;
       height: 70px;
-
-      h4 {
-        font-size: 12px;
-        color: white;
-      }
+      color: white;
     }
   }
 }

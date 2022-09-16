@@ -1,7 +1,11 @@
 import React from "react"
 
 const ListTable = () => {
-  return <div>ListTable</div>
+  return (
+    <table>
+      <div className="list-table-container"></div>
+    </table>
+  )
 }
 
 export default ListTable
