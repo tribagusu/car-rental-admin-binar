@@ -9,5 +9,10 @@
     p {
       font-weight: 600;
     }
+
+    div > * {
+      text-decoration: underline;
+      color: rgb(45, 109, 206);
+    }
   }
 }

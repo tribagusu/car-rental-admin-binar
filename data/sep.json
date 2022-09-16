@@ -1,0 +1,36 @@
+{
+  "sep": [
+    {
+      "date": 1,
+      "totalOrder": 10
+    },
+    {
+      "date": 2,
+      "totalOrder": 15
+    },
+    {
+      "date": 3,
+      "totalOrder": 5
+    },
+    {
+      "date": 4,
+      "totalOrder": 8
+    },
+    {
+      "date": 5,
+      "totalOrder": 4
+    },
+    {
+      "date": 28,
+      "totalOrder": 8
+    },
+    {
+      "date": 29,
+      "totalOrder": 4
+    },
+    {
+      "date": 30,
+      "totalOrder": 9
+    }
+  ]
+}

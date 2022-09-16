@@ -1,7 +1,7 @@
 const ChartTitle = () => {
   return (
-    <section className="data-title">
-      <div className="data-title-container">
+    <section className="chart-title">
+      <div className="chart-title-container">
         <figure></figure>
         <h3>Rented Car Data Visualization</h3>
       </div>

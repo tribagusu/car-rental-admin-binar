@@ -1,6 +1,9 @@
 .nav-dashboard,
 .nav-cars {
   margin-top: 100px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 11%;
 
   .menu-title {
     margin: 40px 0 20px 30px;

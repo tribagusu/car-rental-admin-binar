@@ -1,0 +1,23 @@
+.list-title {
+  margin-top: 150px;
+  margin-left: 230px;
+  height: 2000px;
+
+  .list-title-container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 2rem;
+
+    aside {
+      display: flex;
+      gap: 10px;
+
+      figure {
+        width: 5px;
+        height: 24px;
+        background-color: $primary;
+      }
+    }
+  }
+}

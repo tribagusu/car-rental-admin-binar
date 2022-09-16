@@ -12,7 +12,7 @@ import { orderList } from "../../../../data/dataChart"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement)
 
-const Chart = () => {
+const Chart = ({ data }) => {
   const [dataChart, setDataChart] = useState({
     labels: [],
     datasets: [
