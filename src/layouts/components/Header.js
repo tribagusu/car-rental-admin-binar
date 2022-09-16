@@ -1,10 +1,10 @@
-import menuIcon from "../../assets/menu-icon.png"
 import dropdownIcon from "../../assets/dropdown-icon.png"
+import { UilBars } from "@iconscout/react-unicons"
 
 import { useDispatch, useSelector } from "react-redux"
 import TYPES from "../../redux/types"
 
-const Header = ({ handleToggle }) => {
+const Header = () => {
   const { show } = useSelector((state) => state.show)
   const dispatch = useDispatch()
 
@@ -21,7 +21,7 @@ const Header = ({ handleToggle }) => {
         <div className="header-left df-center">
           <div className="header-logo"></div>
           <div onClick={handleShow} className="menu-icon df-center">
-            <img src={menuIcon} alt="menu" />
+            <UilBars />
           </div>
         </div>
         <div className="header-main df-center">

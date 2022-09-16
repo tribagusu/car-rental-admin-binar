@@ -1,7 +1,7 @@
 import TYPES from "../types"
 
 const initState = {
-  show: true,
+  show: false,
 }
 
 const showReducer = (state = initState, action) => {

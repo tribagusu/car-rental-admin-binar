@@ -3,6 +3,7 @@
   height: 100vh;
   background: $primary;
   position: fixed;
+  z-index: 11;
 
   .sidebar-logo {
     width: 80px;

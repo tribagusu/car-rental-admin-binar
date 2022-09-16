@@ -1,9 +1,11 @@
+import { UilAngleRightB } from "@iconscout/react-unicons"
+
 const Breadcrumb = () => {
   return (
     <section className="breadcrumb">
       <div className="breadcrumb-container df-center ">
         <p>Dashboard</p>
-        <i className="uil uil-angle-right"></i>
+        <UilAngleRightB />
         <small>Dashboard</small>
       </div>
     </section>
