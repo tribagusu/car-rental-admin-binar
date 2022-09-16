@@ -1,7 +1,11 @@
 import React from "react"
 
-const index = () => {
-  return <div>index</div>
+const CarCard = () => {
+  return (
+    <section className="car-card-container">
+      <h1>card</h1>
+    </section>
+  )
 }
 
-export default index
+export default CarCard

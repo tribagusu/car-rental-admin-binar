@@ -1,4 +1,5 @@
 import React from "react"
+import CarCard from "./CarList/Card"
 import ListHeader from "./CarList/ListHeader"
 
 const CarList = () => {
@@ -6,6 +7,7 @@ const CarList = () => {
     <section className="car-list">
       <main className="car-list-container">
         <ListHeader />
+        <CarCard />
       </main>
     </section>
   )

@@ -1,9 +1,10 @@
 .breadcrumb {
-  width: 200px;
+  width: 250px;
   margin-left: 100px;
 
   .breadcrumb-container {
     display: flex;
+    justify-content: flex-start;
     gap: 10px;
 
     p {
@@ -11,7 +12,7 @@
     }
 
     div > * {
-      text-decoration: underline;
+      // text-decoration: underline;
       color: rgb(45, 109, 206);
     }
   }
