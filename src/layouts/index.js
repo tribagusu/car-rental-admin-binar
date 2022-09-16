@@ -1,51 +1,35 @@
-import { useState } from "react"
-import { Navigate } from "react-router-dom"
+// import { useState } from "react"
+// import { Navigate } from "react-router-dom"
 
-// comp
-import Header from "./components/Header"
-import Navbar from "./components/Navbar"
-import Sidebar from "./components/Sidebar"
+// // comp
+// import Header from "./components/Header"
+// import Sidebar from "./components/Sidebar"
+// import NavDashboard from "./components/Navbar/NavDashboard"
+// import NavCars from "./components/Navbar/NavCars"
 
-const Layout = () => {
-  const user = localStorage.getItem("token")
-  const [open, setOpen] = useState(true)
-  const [car, setCar] = useState(false)
-  const [dsbr, setDsbr] = useState(true)
+// const Layout = () => {
+//   const user = localStorage.getItem("token")
+//   const [open, setOpen] = useState(true)
 
-  const handleToggle = () => {
-    setOpen(!open)
-  }
-  const handleCar = () => {
-    setCar(true)
-    setDsbr(false)
-  }
-  const handleDsbr = () => {
-    setDsbr(true)
-    setCar(false)
-  }
+//   const handleToggle = () => {
+//     setOpen(!open)
+//     console.log(open)
+//   }
 
-  const props = {
-    car,
-    dsbr,
-    handleCar,
-    handleDsbr,
-    open,
-    handleToggle,
-  }
+//   return (
+//     <>
+//       {user ? (
+//         <>
+//           <Header handleToggle={handleToggle} />
+//           <Sidebar />
+//           <NavDashboard open={open} />
+//           <NavCars open={open} />
+//         </>
+//       ) : (
+//         <Navigate to="/login" replace />
+//       )}
+//     </>
+//   )
+// }
 
-  return (
-    <>
-      {user ? (
-        <>
-          <Navbar {...props} />
-          <Header {...props} />
-          <Sidebar {...props} />
-        </>
-      ) : (
-        <Navigate to="/login" replace />
-      )}
-    </>
-  )
-}
-
-export default Layout
+// export default Layout

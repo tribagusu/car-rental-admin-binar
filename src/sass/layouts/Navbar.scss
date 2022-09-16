@@ -1,27 +1,57 @@
 .nav-container {
   width: 220px;
   height: 100vh;
-  margin-left: 80px;
-  top: 70px;
+  left: 80px;
   position: fixed;
   background: white;
 
-  .menu-title {
-    margin: 40px 0 20px 30px;
+  .nav-dashboard,
+  .nav-cars {
+    margin-top: 100px;
 
-    h4 {
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8a8a8a;
+    .menu-title {
+      margin: 40px 0 20px 30px;
+
+      h4 {
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #8a8a8a;
+      }
+    }
+
+    .menu {
+      padding: 10px;
+
+      p {
+        margin: 0 20px;
+        font-weight: 600;
+      }
     }
   }
 
-  .menu {
-    padding: 10px;
+  // .nav-cars {
+  //   width: 300px;
+  //   height: 100vh;
+  //   margin-top: 100px;
+  //   background: tan;
 
-    p {
-      margin: 0 20px;
-      font-weight: 600;
-    }
-  }
+  //   .menu-title {
+  //     margin: 40px 0 20px 30px;
+
+  //     h4 {
+  //       text-transform: uppercase;
+  //       font-weight: 600;
+  //       color: #8a8a8a;
+  //     }
+  //   }
+
+  //   .menu {
+  //     padding: 10px;
+
+  //     p {
+  //       margin: 0 20px;
+  //       font-weight: 600;
+  //     }
+  //   }
+  // }
 }

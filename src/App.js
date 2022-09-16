@@ -6,13 +6,9 @@ import LoginPage from "./pages/LoginPage"
 import CarsPage from "./pages/Cars/CarsPage"
 import AddCarPage from "./pages/Cars/AddCarPage"
 
-//comp
-import Layout from "./layouts"
-
 function App() {
   return (
     <>
-      <Layout />
       <Routes>
         <Route path="dashboard" element={<DashboardPage />} />
         <Route path="cars" element={<CarsPage />}>

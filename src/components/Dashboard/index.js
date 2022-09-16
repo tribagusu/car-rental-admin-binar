@@ -1,9 +1,13 @@
 import React, { useEffect } from "react"
 
 // components
-const Breadcrumb = React.lazy(() => import("./Breadcrumb"))
-const ChartRented = React.lazy(() => import("./ChartRented"))
-const ListOrder = React.lazy(() => import("./ListOrder"))
+// const Breadcrumb = React.lazy(() => import("./Breadcrumb"))
+// const ChartRented = React.lazy(() => import("./ChartRented"))
+// const ListOrder = React.lazy(() => import("./ListOrder"))
+
+import Breadcrumb from "./Breadcrumb"
+import ChartRented from "./ChartRented"
+import ListOrder from "./ListOrder"
 
 const Dashboard = () => {
   return (
