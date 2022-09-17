@@ -1,6 +1,7 @@
 import React from "react"
 import { Navigate } from "react-router-dom"
 import { useTransition, animated } from "react-spring"
+import { useSelector } from "react-redux"
 
 //# lazy
 // const Layout = React.lazy(() => import("../../layouts"))
@@ -11,8 +12,6 @@ import CarList from "../../components/Car"
 import NavCars from "../../layouts/components/Navbar/NavCars"
 import Header from "../../layouts/components/Header"
 import Sidebar from "../../layouts/components/Sidebar"
-
-import { useSelector } from "react-redux"
 
 const CarsPage = () => {
   const user = localStorage.getItem("token")
