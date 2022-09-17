@@ -7,9 +7,9 @@ import CarAddHeader from "./CarAddHeader"
 
 const CarAddNew = () => {
   const [carName, setCarName] = useState("")
-  const [carPrice, setCarPrice] = useState(0)
+  const [carPrice, setCarPrice] = useState("")
   const [carImage, setCarImage] = useState("")
-  const [carCategory, setCarCategory] = useState("")
+  const [carCategory, setCarCategory] = useState(undefined)
 
   const props = {
     setCarName,
@@ -28,8 +28,10 @@ const CarAddNew = () => {
     <section className="car-add-new">
       <main className="car-add-new__container">
         <CarAddHeader />
-        <CarAddForm {...props} />
-        <CarAddButton {...props} />
+        <div className="car-add-new__form">
+          <CarAddForm {...props} />
+          <CarAddButton {...props} />
+        </div>
       </main>
     </section>
   )

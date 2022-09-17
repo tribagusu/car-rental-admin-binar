@@ -31,7 +31,7 @@ const CarCard = () => {
   return (
     <section className="car-card-container">
       {cars.map((car) => (
-        <div className="car-card">
+        <div key={car.id} className="car-card">
           <>
             <div className="card-body">
               <div className="card-image">
