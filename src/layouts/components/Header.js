@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <div className="header-main df-center">
           <div className="header-search df-center">
-            <input type="text" placeholder="Search" />
+            <input type="search" placeholder="Search" />
             <button className="btn-outlined-primary">Search</button>
           </div>
           <div className="header-user df-center ">

@@ -1,0 +1,16 @@
+.car-add-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  .car-add-title__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}

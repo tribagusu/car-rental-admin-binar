@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { Link } from "react-router-dom"
 
 // func
 import { handleCars } from "../../../../redux/actions/carsAction"

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux"
 import Header from "../../layouts/components/Header"
 import Sidebar from "../../layouts/components/Sidebar"
 import NavCars from "../../layouts/components/Navbar/NavCars"
+import CarAddNew from "../../components/Car/CarAddNew"
 
 const AddCarPage = () => {
   const user = localStorage.getItem("token")
@@ -17,13 +18,13 @@ const AddCarPage = () => {
         <main>
           <Header />
           <Sidebar />
-          <section className="cars-page">
+          <section className="add-car-page">
             {show && (
               <nav className="nav-container">
                 <NavCars />
               </nav>
             )}
-            {/* <CarList /> */}
+            <CarAddNew />
           </section>
         </main>
       ) : (
