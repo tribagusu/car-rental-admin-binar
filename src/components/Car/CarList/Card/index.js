@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 
 // func
-import { handleCars } from "../../../../redux/actions/carsAction"
+import { handleCars, handleCar } from "../../../../redux/actions/carsAction"
 import { formatCurrency } from "../../../../utils/formatCurrency"
 
 // library
@@ -26,6 +26,7 @@ const CarCard = () => {
     dispatch(handleCars())
   }, [])
 
+  // map
   const car = cars.map((car) => car)
   const timeUpdated = moment(car.updatedAt).format("MMM D YYYY, hh:mm")
 

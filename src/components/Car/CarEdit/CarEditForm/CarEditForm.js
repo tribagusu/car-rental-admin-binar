@@ -1,16 +1,9 @@
-import React from "react"
+import { useSelector } from "react-redux"
 
 const CarEditForm = (props) => {
-  const {
-    carName,
-    carPrice,
-    carImage,
-    carCategory,
-    setCarName,
-    setCarPrice,
-    setCarImage,
-    setCarCategory,
-  } = props
+  const { car } = useSelector((state) => state.cars)
+
+  const { setCarName, setCarPrice, setCarImage, setCarCategory } = props
 
   return (
     <section className="car-edit-form__container">
@@ -21,8 +14,8 @@ const CarEditForm = (props) => {
           </label>
           <input
             onChange={(e) => setCarName(e.target.value)}
-            value={carName}
             type="text"
+            placeholder={car.name}
             required
           />
         </div>
@@ -32,10 +25,10 @@ const CarEditForm = (props) => {
           </label>
           <input
             onChange={(e) => setCarPrice(e.target.value)}
-            value={carPrice}
             type="number"
             min="0"
             required
+            placeholder={car.price}
           />
         </div>
         <div className="form-upload">
@@ -44,7 +37,6 @@ const CarEditForm = (props) => {
           </label>
           <input
             onChange={(e) => setCarImage(e.target.value)}
-            value={carImage}
             type="file"
             required
           />
@@ -53,17 +45,10 @@ const CarEditForm = (props) => {
           <label>
             Kategori<span>*</span>
           </label>
-          <select
-            onChange={(e) => setCarCategory(e.target.value)}
-            value={carCategory}
-            required
-          >
-            <option selected hidden disabled>
-              Pilih Kategori Mobil
-            </option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
+          <select onChange={(e) => setCarCategory(e.target.value)} required>
+            <option value="small">2 - 4 Orang</option>
+            <option value="medium">4 - 6 Orang</option>
+            <option value="large">6 - 8 Orang</option>
           </select>
         </div>
         <div>
