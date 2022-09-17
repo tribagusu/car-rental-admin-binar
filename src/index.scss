@@ -25,16 +25,22 @@
 @import "./sass/components/Dashboard/ListTable";
 
 // cars
-@import "./sass/components/Car/CarList";
+@import "./sass/components/Car/CarList.scss";
 @import "./sass/components/Car/CarFilter.scss";
 @import "./sass/components/Car/CarListTitle.scss";
 @import "./sass/components/Car/CarCard.scss";
 
-// cars/addNew
+// cars/add
 @import "./sass/components/Car/CarAdd/CarAdd.scss";
 @import "./sass/components/Car/CarAdd/CarAddTitle.scss";
 @import "./sass/components/Car/CarAdd/CarAddForm.scss";
 @import "./sass/components/Car/CarAdd/CarAddButton.scss";
+
+// cars/edit
+@import "./sass/components/Car/CarEdit/CarEdit.scss";
+@import "./sass/components/Car/CarEdit/CarEditTitle.scss";
+@import "./sass/components/Car/CarEdit/CarEditForm.scss";
+@import "./sass/components/Car/CarEdit/CarEditButton.scss";
 
 //# utilities
 @import "./sass/abstracts/utilities";
@@ -43,3 +49,4 @@
 @import "./sass/pages/DashboardPage.scss";
 @import "./sass/pages/CarsPage.scss";
 @import "./sass/pages/AddCarPage.scss";
+@import "./sass/pages/EditCarPage.scss";

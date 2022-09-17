@@ -1,4 +1,3 @@
-import truckIcon from "../../assets/truck-icon.png"
 import { NavLink } from "react-router-dom"
 
 // assets

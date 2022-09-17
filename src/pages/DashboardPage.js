@@ -9,9 +9,9 @@ import { useTransition, animated } from "react-spring"
 
 // comp
 import Dashboard from "../components/Dashboard"
-import NavDashboard from "../layouts/components/Navbar/NavDashboard"
-import Header from "../layouts/components/Header"
-import Sidebar from "../layouts/components/Sidebar"
+import NavDashboard from "../layouts/Navbar/NavDashboard"
+import Header from "../layouts/Header"
+import Sidebar from "../layouts/Sidebar"
 
 const DashboardPage = () => {
   const { show } = useSelector((state) => state.show)

@@ -1,8 +1,8 @@
-import dropdownIcon from "../../assets/dropdown-icon.png"
+import dropdownIcon from "../assets/dropdown-icon.png"
 import { UilBars } from "@iconscout/react-unicons"
 
 import { useDispatch, useSelector } from "react-redux"
-import TYPES from "../../redux/types"
+import TYPES from "../redux/types"
 
 const Header = () => {
   const { show } = useSelector((state) => state.show)

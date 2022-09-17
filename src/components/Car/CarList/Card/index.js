@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
 
 // func
 import { handleCars } from "../../../../redux/actions/carsAction"
@@ -53,10 +54,12 @@ const CarCard = () => {
                     <UilTrash />
                     <p>Delete</p>
                   </button>
-                  <button className="button-edit btn">
-                    <UilEdit />
-                    <p>Edit</p>
-                  </button>
+                  <Link to={`edit-car/${car.id}`}>
+                    <button className="button-edit btn">
+                      <UilEdit />
+                      <p>Edit</p>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
