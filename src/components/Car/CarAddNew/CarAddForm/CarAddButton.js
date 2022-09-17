@@ -1,4 +1,3 @@
-import React from "react"
 import { useNavigate } from "react-router-dom"
 
 // func
@@ -6,7 +5,6 @@ import { postAddCar } from "../postAddCar"
 
 const CarAddButton = (props) => {
   const { carName, carPrice, carImage, carCategory } = props
-
   const navigate = useNavigate()
 
   // func

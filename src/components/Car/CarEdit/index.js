@@ -31,6 +31,10 @@ const CarEdit = () => {
     setCarPrice,
     setCarImage,
     setCarCategory,
+    carName,
+    carPrice,
+    carImage,
+    carCategory,
   }
 
   return (
@@ -39,7 +43,7 @@ const CarEdit = () => {
         <CarEditHeader />
         <div className="car-edit__form">
           <CarEditForm {...props} />
-          <CarEditButton />
+          <CarEditButton {...props} />
         </div>
       </main>
     </section>
