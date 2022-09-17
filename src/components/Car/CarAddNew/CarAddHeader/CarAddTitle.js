@@ -1,8 +1,3 @@
-import { Link } from "react-router-dom"
-
-// library
-import { UilPlus } from "@iconscout/react-unicons"
-
 const CarAddTitle = () => {
   return (
     <section className="car-add-title">

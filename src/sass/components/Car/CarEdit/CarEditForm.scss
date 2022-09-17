@@ -1,0 +1,46 @@
+.car-edit-form__container {
+  width: 100%;
+  height: 318px;
+  background: white;
+  padding: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 3rem;
+
+    label,
+    p {
+      width: 200px;
+
+      span {
+        color: red;
+      }
+    }
+
+    input {
+      width: 350px;
+      height: 35px;
+      border: 1px solid #d0d0d0;
+      border-radius: 2px;
+      padding: 0 1rem;
+    }
+
+    select {
+      width: 385px;
+      height: 35px;
+      border: 1px solid #d0d0d0;
+      border-radius: 2px;
+      padding: 0 1rem;
+    }
+  }
+
+  .form-upload {
+    input {
+      border: none;
+      padding: 0;
+      // background: salmon;
+    }
+  }
+}

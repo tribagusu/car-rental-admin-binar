@@ -1,0 +1,10 @@
+.car-edit-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  .car-edit-title__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}

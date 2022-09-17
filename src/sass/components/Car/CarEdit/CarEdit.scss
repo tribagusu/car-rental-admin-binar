@@ -1,0 +1,21 @@
+.car-edit {
+  height: 100vh;
+  margin-top: 70px;
+  margin-left: 150px;
+  width: 1300px;
+  padding: 0 1rem;
+
+  .car-edit__container {
+    height: 80%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .car-edit__form {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
