@@ -1,0 +1,46 @@
+.modal-delete__backdrop {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-card {
+  width: 360px;
+  height: 300px;
+  border-radius: 4px;
+  background: white;
+  padding: 20px;
+
+  .modal-content {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 100%;
+
+    img {
+      width: 153px;
+      height: 121px;
+      margin: 10px 0;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .modal-button {
+      display: flex;
+      gap: 10px;
+
+      button {
+        width: 87px;
+        height: 36px;
+      }
+    }
+  }
+}

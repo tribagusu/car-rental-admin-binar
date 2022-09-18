@@ -1,9 +1,11 @@
 import React from "react"
+
+// lib
 import { UilTrash } from "@iconscout/react-unicons"
 
-const ButtonDelete = () => {
+const ButtonDelete = ({ handleModal }) => {
   return (
-    <button className="button-delete btn-outlined-danger">
+    <button onClick={handleModal} className="button-delete btn-outlined-danger">
       <UilTrash />
       <p>Delete</p>
     </button>

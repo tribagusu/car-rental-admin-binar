@@ -17,7 +17,7 @@ import noImage from "../../../../assets/no-image.png"
 import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
 
-const CarCard = () => {
+const CarCard = ({ handleModal }) => {
   const { cars } = useSelector((state) => state.cars)
   const dispatch = useDispatch()
 
@@ -50,7 +50,7 @@ const CarCard = () => {
                   <small>Updated at {timeUpdated}</small>
                 </div>
                 <div className="card-button">
-                  <ButtonDelete />
+                  <ButtonDelete handleModal={handleModal} />
                   <Link to={`edit-car/${car.id}`}>
                     <ButtonEdit />
                   </Link>
