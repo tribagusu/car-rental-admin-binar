@@ -5,13 +5,13 @@ export const putEditCar = (payload, navigate, id) => {
   axios
     .put(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`, payload)
     .then((res) => {
-      console.log(res)
+      console.log(res.status)
       if (res.status === 200) {
         swal({
           title: "Saved!",
-          text: "Data Saved successfully",
+          text: "Berhasil Mengubah Data",
           icon: "success",
-          timer: 1500,
+          timer: 2000,
         })
         navigate(-1)
       }

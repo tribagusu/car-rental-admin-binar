@@ -5,7 +5,7 @@ const Breadcrumb = () => {
     <section className="breadcrumb">
       <div className="breadcrumb-container df-center ">
         <p>Dashboard</p>
-        <i class="uil uil-angle-right-b"></i>
+        <i className="uil uil-angle-right-b"></i>
         <div className="link">
           <Link to="#">Dashboard</Link>
         </div>

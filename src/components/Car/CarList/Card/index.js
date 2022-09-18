@@ -3,20 +3,19 @@ import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 
 // func
-import { handleCars, handleCar } from "../../../../redux/actions/carsAction"
+import { handleCars } from "../../../../redux/actions/carsAction"
 import { formatCurrency } from "../../../../utils/formatCurrency"
 
 // library
 import moment from "moment/moment"
-import {
-  UilUsersAlt,
-  UilClock,
-  UilTrash,
-  UilEdit,
-} from "@iconscout/react-unicons"
+import { UilUsersAlt, UilClock } from "@iconscout/react-unicons"
 
 // asset
 import noImage from "../../../../assets/no-image.png"
+
+// comp
+import ButtonDelete from "./ButtonDelete"
+import ButtonEdit from "./ButtonEdit"
 
 const CarCard = () => {
   const { cars } = useSelector((state) => state.cars)
@@ -51,15 +50,9 @@ const CarCard = () => {
                   <small>Updated at {timeUpdated}</small>
                 </div>
                 <div className="card-button">
-                  <button className="button-delete btn-outlined-danger">
-                    <UilTrash />
-                    <p>Delete</p>
-                  </button>
+                  <ButtonDelete />
                   <Link to={`edit-car/${car.id}`}>
-                    <button className="button-edit btn">
-                      <UilEdit />
-                      <p>Edit</p>
-                    </button>
+                    <ButtonEdit />
                   </Link>
                 </div>
               </div>

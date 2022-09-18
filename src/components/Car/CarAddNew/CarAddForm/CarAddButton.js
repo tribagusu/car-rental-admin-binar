@@ -14,10 +14,10 @@ const CarAddButton = (props) => {
 
   const handleAddCar = () => {
     const payload = {
-      carName,
-      carPrice,
-      carImage,
-      carCategory,
+      name: carName,
+      category: carCategory,
+      price: carPrice,
+      image: carImage,
     }
     postAddCar(payload, navigate)
   }

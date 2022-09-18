@@ -22,8 +22,6 @@ const CarAddNew = () => {
     carCategory,
   }
 
-  //   console.log(carName, carPrice, carImage, carCategory)
-
   return (
     <section className="car-add-new">
       <main className="car-add-new__container">
