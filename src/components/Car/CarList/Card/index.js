@@ -50,7 +50,7 @@ const CarCard = ({ handleModal }) => {
                   <small>Updated at {timeUpdated}</small>
                 </div>
                 <div className="card-button">
-                  <ButtonDelete handleModal={handleModal} />
+                  <ButtonDelete carId={car.id} />
                   <Link to={`edit-car/${car.id}`}>
                     <ButtonEdit />
                   </Link>
