@@ -17,7 +17,7 @@ const CarList = () => {
       <main className="car-list-container">
         <ListHeader />
         <CarCard handleModal={handleModal} />
-        {showModal && <ModalDelete />}
+        {showModal && <ModalDelete handleModal={handleModal} />}
       </main>
     </section>
   )

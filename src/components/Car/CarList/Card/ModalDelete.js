@@ -3,7 +3,7 @@ import React from "react"
 // asset
 import modalImg from "../../../../assets/modal-img.png"
 
-const ModalDelete = () => {
+const ModalDelete = ({ handleModal }) => {
   return (
     <div className="modal-delete__backdrop df-center">
       <div className="modal-card df-center">
@@ -16,7 +16,9 @@ const ModalDelete = () => {
           </p>
           <div className="modal-button">
             <button className="btn-primary">Ya</button>
-            <button className="btn-outlined-primary">Tidak</button>
+            <button onClick={handleModal} className="btn-outlined-primary">
+              Tidak
+            </button>
           </div>
         </div>
       </div>
