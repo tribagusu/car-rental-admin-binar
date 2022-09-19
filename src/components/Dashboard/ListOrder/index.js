@@ -1,10 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux"
 
 // comp
-import ListTable from "./List/ListTable"
-import ListTitle from "./List/ListTitle"
+import ListTable from "./ListTable"
+import ListTitle from "./ListTitle"
+
+// func
+import { handleOrders } from "../../../redux/actions/carsAction"
 
 const ListOrder = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(handleOrders())
+  }, [])
+
   return (
     <>
       <ListTitle />
