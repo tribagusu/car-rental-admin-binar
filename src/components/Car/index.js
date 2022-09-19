@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 // comp
-import CarCard from "./CarList/Card"
+import CarCard from "./CarList/CarCard"
 import ListHeader from "./CarList/ListHeader"
 
 const CarList = () => {

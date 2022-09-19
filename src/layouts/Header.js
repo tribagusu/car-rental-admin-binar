@@ -1,11 +1,12 @@
-import dropdownIcon from "../assets/dropdown-icon.png"
-import { UilBars } from "@iconscout/react-unicons"
+import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
+import { useState } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
 import TYPES from "../redux/types"
 
 const Header = () => {
   const { show } = useSelector((state) => state.show)
+  const { searchTerm } = useSelector((state) => state.search)
   const dispatch = useDispatch()
 
   const handleShow = () => {
@@ -14,6 +15,15 @@ const Header = () => {
       payload: !show,
     })
   }
+
+  const handleSearch = (e) => {
+    dispatch({
+      type: TYPES.SEARCH_TERM,
+      payload: e.target.value,
+    })
+  }
+
+  console.log(searchTerm)
 
   return (
     <header className="header p-0">
@@ -26,7 +36,12 @@ const Header = () => {
         </div>
         <div className="header-main df-center">
           <div className="header-search df-center">
-            <input type="search" placeholder="Search" />
+            <input
+              onChange={handleSearch}
+              type="search"
+              placeholder="Search"
+              value={searchTerm}
+            />
             <button className="btn-outlined-primary">Search</button>
           </div>
           <div className="header-user df-center ">
@@ -36,8 +51,8 @@ const Header = () => {
             <div className="user-name">
               <p>Unis Badri</p>
             </div>
-            <div className="user-detail">
-              <img src={dropdownIcon} alt="dropdown" />
+            <div className="user-detail df-center">
+              <UilAngleDown />
             </div>
           </div>
         </div>

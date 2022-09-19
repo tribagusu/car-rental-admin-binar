@@ -24,3 +24,15 @@ export const handleCar = (id) => (dispatch) => {
     })
     .catch((err) => console.log(err.message))
 }
+
+export const handleOrders = () => (dispatch) => {
+  axios
+    .get("https://bootcamp-rent-car.herokuapp.com/admin/order")
+    .then((res) => {
+      dispatch({
+        type: TYPES.GET_ORDERS,
+        payload: res.data,
+      })
+    })
+    .catch((err) => console.log(err.message))
+}

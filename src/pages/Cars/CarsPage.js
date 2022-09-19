@@ -25,7 +25,7 @@ const CarsPage = () => {
   return (
     <>
       {user ? (
-        <main>
+        <>
           <Header />
           <Sidebar />
           <section className="cars-page">
@@ -39,7 +39,7 @@ const CarsPage = () => {
             )}
             <CarList />
           </section>
-        </main>
+        </>
       ) : (
         <Navigate to="/login" replace />
       )}

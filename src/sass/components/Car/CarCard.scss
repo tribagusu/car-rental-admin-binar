@@ -1,4 +1,4 @@
-.car-card-container {
+.car-card__container {
   margin-top: 20px;
   height: 100vh;
   display: flex;
@@ -8,20 +8,20 @@
 
   .car-card {
     background: white;
-    width: 320px;
-    height: 482px;
+    width: 380px;
+    height: 530px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     padding: 2rem;
 
-    .card-body {
+    .car-card__body {
       height: 100%;
       display: flex;
       gap: 2rem;
       flex-direction: column;
       justify-content: space-between;
 
-      .card-image {
+      .car-card__image {
         width: 100%;
         height: 222px;
         display: flex;
@@ -29,7 +29,7 @@
         justify-content: center;
       }
 
-      .card-content {
+      .car-card__content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -46,7 +46,7 @@
           align-items: center;
         }
 
-        .card-button {
+        .car-card__button {
           display: flex;
           justify-content: space-between;
           // width: 100%;
