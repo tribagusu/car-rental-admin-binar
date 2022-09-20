@@ -1,38 +1,32 @@
 import React, { useState, useEffect } from "react"
-import { getMonth } from "./getData/getMonth"
+import { useSelector, useDispatch } from "react-redux"
 
-// comp
-// const ChartTitle = React.lazy(() => import("./Chart/ChartTitle"))
-// const ChartFilter = React.lazy(() => import("./Chart/ChartFilter"))
-// const Chart = React.lazy(() => import("./Chart/Chart"))
-import { getData } from "./getData/getData"
-
+//# comp
 import ChartTitle from "./Chart/ChartTitle"
 import ChartFilter from "./Chart/ChartFilter"
 import Chart from "./Chart/Chart"
+//# func
+import { handleMonthlyOrder } from "../../../redux/actions/monthlyOrderAction"
+import { handleDailyOrder } from "../../../redux/actions/dailyOrderAction"
 
 const ChartRented = () => {
-  const [month, setMonth] = useState({})
-  const [data, setData] = useState([])
-  const [value, setValue] = useState("")
+  //# redux state
+  const { sepOrder, octOrder, novOrder, decOrder } = useSelector(
+    (state) => state.monthlyOrder
+  )
 
-  const handleMonth = () => {
-    // getMonth(setMonth, value)
-    getData(setData)
-  }
-
-  const props = {
-    handleMonth,
-    value,
-    setValue,
-    data,
-  }
+  //# function
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(handleMonthlyOrder())
+    dispatch(handleDailyOrder(sepOrder, octOrder, novOrder, decOrder))
+  }, [])
 
   return (
     <>
       <ChartTitle />
-      <ChartFilter {...props} />
-      <Chart {...props} />
+      <ChartFilter />
+      <Chart />
     </>
   )
 }

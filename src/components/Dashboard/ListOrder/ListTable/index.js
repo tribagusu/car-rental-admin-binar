@@ -43,7 +43,11 @@ const ListTable = () => {
     <div className="list-table-container">
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
-          <TableHead style={{ background: "#cfd4ed", color: "#fff" }}>
+          <TableHead
+            style={{
+              background: "#cfd4ed",
+            }}
+          >
             <TableRow>
               {tableHead.map((head) => (
                 <TableCell key={head.id}>{head.label}</TableCell>

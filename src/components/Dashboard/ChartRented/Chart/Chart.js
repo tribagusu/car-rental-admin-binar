@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
 
 //# chart
 import { Bar } from "react-chartjs-2"
@@ -8,10 +9,10 @@ import {
   LinearScale,
   BarElement,
 } from "chart.js"
+//#
 import { orderList } from "../../../../data/dataChart"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement)
-
 const Chart = ({ data }) => {
   const [dataChart, setDataChart] = useState({
     labels: [],
