@@ -1,7 +1,20 @@
-const ChartFilter = (props) => {
-  const { handleMonth, value, setValue } = props
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 
-  // console.log(value)
+import { handleDataOrder } from "../../../../redux/actions/dataOrderAction"
+
+const ChartFilter = () => {
+  const [value, setValue] = useState("Sep")
+
+  //# func
+  const dispatch = useDispatch()
+  const getDataOrder = (value) => {
+    dispatch(handleDataOrder(value))
+  }
+
+  useEffect((value) => {
+    getDataOrder(value)
+  }, [])
 
   return (
     <section className="chart-filter">
@@ -9,14 +22,14 @@ const ChartFilter = (props) => {
         <p>Month</p>
         <div className="filter">
           <select onChange={(e) => setValue(e.target.value)}>
-            <option value={"sep"} defaultValue>
+            <option value={"Sep"} defaultValue>
               Sep - 2022
             </option>
-            <option value={"oct"}>Oct - 2022</option>
-            <option value={"nov"}>Nov - 2022</option>
-            <option value={"dec"}>Dec - 2022</option>
+            <option value={"Oct"}>Oct - 2022</option>
+            <option value={"Nov"}>Nov - 2022</option>
+            <option value={"Dec"}>Dec - 2022</option>
           </select>
-          <button onClick={() => handleMonth(value)} className="btn-primary">
+          <button onClick={() => getDataOrder(value)} className="btn-primary">
             Go
           </button>
         </div>

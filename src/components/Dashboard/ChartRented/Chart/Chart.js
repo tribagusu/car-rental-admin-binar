@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 
 //# chart
 import { Bar } from "react-chartjs-2"
@@ -9,11 +9,12 @@ import {
   LinearScale,
   BarElement,
 } from "chart.js"
-//#
-import { orderList } from "../../../../data/dataChart"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement)
-const Chart = ({ data }) => {
+const Chart = () => {
+  //# redux state
+  const { dataOrder } = useSelector((state) => state.dataOrder)
+  //# chart state
   const [dataChart, setDataChart] = useState({
     labels: [],
     datasets: [
@@ -24,18 +25,30 @@ const Chart = ({ data }) => {
     ],
   })
 
+  //# function sort by number
+  function sortArray(a, b) {
+    return a - b
+  }
+  const sortedOrder = dataOrder.sort(sortArray)
+
+  //# function count duplicate
+  const newOrder = sortedOrder.reduce((accVal, val) => {
+    accVal[val] = (accVal[val] || 0) + 1
+    return accVal
+  }, {})
+
   useEffect(() => {
     setDataChart({
-      labels: orderList.map((data) => data.date),
+      labels: Object.keys(newOrder),
       datasets: [
         {
           label: "Rented Car",
-          data: orderList.map((data) => data.totalOrder),
+          data: Object.values(newOrder),
           backgroundColor: "#586B90",
         },
       ],
     })
-  }, [])
+  }, [dataOrder])
 
   return (
     <section className="rented-car-chart">
