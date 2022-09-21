@@ -14,9 +14,9 @@ import Header from "../layouts/Header"
 import Sidebar from "../layouts/Sidebar"
 
 const DashboardPage = () => {
-  const { show } = useSelector((state) => state.show)
+  const { showNav } = useSelector((state) => state.showNav)
   const user = localStorage.getItem("token")
-  const transition = useTransition(show, {
+  const transition = useTransition(showNav, {
     from: { x: -100, y: 0, opacity: 0 },
     enter: { x: 0, y: 0, opacity: 1 },
     delay: 0,

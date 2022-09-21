@@ -10,7 +10,7 @@ import CarEdit from "../../components/Car/CarEdit"
 
 const EditCarPage = () => {
   const user = localStorage.getItem("token")
-  const { show } = useSelector((state) => state.show)
+  const { showNav } = useSelector((state) => state.showNav)
 
   return (
     <>
@@ -19,7 +19,7 @@ const EditCarPage = () => {
           <Header />
           <Sidebar />
           <section className="edit-car-page">
-            {show && (
+            {showNav && (
               <nav className="nav-container">
                 <NavCars />
               </nav>

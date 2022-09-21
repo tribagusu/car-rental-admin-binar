@@ -15,8 +15,8 @@ import Sidebar from "../../layouts/Sidebar"
 
 const CarsPage = () => {
   const user = localStorage.getItem("token")
-  const { show } = useSelector((state) => state.show)
-  const transition = useTransition(show, {
+  const { showNav } = useSelector((state) => state.showNav)
+  const transition = useTransition(showNav, {
     from: { x: -100, y: 0, opacity: 0 },
     enter: { x: 0, y: 0, opacity: 1 },
     delay: 0,

@@ -10,7 +10,7 @@ import CarAddNew from "../../components/Car/CarAddNew"
 
 const AddCarPage = () => {
   const user = localStorage.getItem("token")
-  const { show } = useSelector((state) => state.show)
+  const { showNav } = useSelector((state) => state.showNav)
 
   return (
     <>
@@ -19,7 +19,7 @@ const AddCarPage = () => {
           <Header />
           <Sidebar />
           <section className="add-car-page">
-            {show && (
+            {showNav && (
               <nav className="nav-container">
                 <NavCars />
               </nav>

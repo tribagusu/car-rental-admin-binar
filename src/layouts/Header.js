@@ -1,18 +1,17 @@
 import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
-import { useState } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
 import TYPES from "../redux/types"
 
 const Header = () => {
-  const { show } = useSelector((state) => state.show)
+  const { showNav } = useSelector((state) => state.showNav)
   const { searchTerm } = useSelector((state) => state.search)
   const dispatch = useDispatch()
 
-  const handleShow = () => {
+  const handleShowNav = () => {
     dispatch({
-      type: TYPES.SHOW,
-      payload: !show,
+      type: TYPES.SHOW_NAV,
+      payload: !showNav,
     })
   }
 
@@ -30,7 +29,7 @@ const Header = () => {
       <div className="header header-container">
         <div className="header-left df-center">
           <div className="header-logo"></div>
-          <div onClick={handleShow} className="menu-icon df-center">
+          <div onClick={handleShowNav} className="menu-icon df-center">
             <UilBars />
           </div>
         </div>
