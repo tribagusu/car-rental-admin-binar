@@ -1,20 +1,5 @@
-import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
-
-import { handleDataOrder } from "../../../../redux/actions/dataOrderAction"
-
-const ChartFilter = () => {
-  const [value, setValue] = useState("Sep")
-
-  //# func
-  const dispatch = useDispatch()
-  const getDataOrder = (value) => {
-    dispatch(handleDataOrder(value))
-  }
-
-  useEffect((value) => {
-    getDataOrder(value)
-  }, [])
+const ChartFilter = (props) => {
+  const { value, setValue, getDataOrder } = props
 
   return (
     <section className="chart-filter">

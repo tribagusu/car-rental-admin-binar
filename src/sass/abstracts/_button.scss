@@ -65,3 +65,32 @@
     @include btn($bg: $danger);
   }
 }
+
+button.btn-active {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid $primary;
+  padding: $base-padding $base-padding * 2;
+  border-radius: $base-border-radius / 3;
+  background-color: $primary;
+}
+
+button.btn-passive {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid $primary;
+  padding: $base-padding $base-padding * 2;
+  border-radius: $base-border-radius / 3;
+  background-color: white;
+  border: 1px solid $primary;
+  color: $primary;
+  opacity: 0.7;
+}
+
+button.btn-passive:hover {
+  opacity: 1;
+  background: transparent;
+}
