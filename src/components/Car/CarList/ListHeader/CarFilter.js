@@ -15,11 +15,6 @@ const CarFilter = () => {
   const [showMedium, setShowMedium] = useState(false)
   const [showLarge, setShowLarge] = useState(false)
 
-  // const dispatch = useDispatch()
-  // const handleClick = () => {
-
-  // }
-
   //# props
   const props = {
     showAll,

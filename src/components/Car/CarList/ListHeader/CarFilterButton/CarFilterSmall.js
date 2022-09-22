@@ -7,6 +7,7 @@ const CarFilterSmall = (props) => {
   const { showSmall, setShowAll, setShowSmall, setShowMedium, setShowLarge } =
     props
 
+  const dispatch = useDispatch()
   const handleShowSmall = () => {
     setShowSmall({
       cat1: "small",
@@ -15,11 +16,6 @@ const CarFilterSmall = (props) => {
     setShowMedium(false)
     setShowLarge(false)
     setShowAll(false)
-    handleClick()
-  }
-
-  const dispatch = useDispatch()
-  const handleClick = () => {
     dispatch(handleCarFiltered(showSmall))
   }
 
