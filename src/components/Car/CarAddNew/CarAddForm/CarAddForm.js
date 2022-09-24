@@ -4,11 +4,10 @@ const CarAddForm = (props) => {
   const {
     carName,
     carPrice,
-    carImage,
     carCategory,
     setCarName,
     setCarPrice,
-    setCarImage,
+    onImageUpload,
     setCarCategory,
   } = props
 
@@ -44,12 +43,7 @@ const CarAddForm = (props) => {
           <label>
             Foto<span>*</span>
           </label>
-          <input
-            onChange={(e) => setCarImage(e.target.value)}
-            value={carImage}
-            type="file"
-            required
-          />
+          <input onChange={onImageUpload} type="file" required />
         </div>
         <div>
           <label>

@@ -17,6 +17,7 @@ export const handleDataOrder = (value) => {
         //# filter by value of month
         const order = dataRent.filter((data) => data.includes(value))
         const dataOrder = order.map((date) => moment(date).format("D"))
+
         //# dispatch
         dispatch({
           type: TYPES.GET_DATA_ORDER,

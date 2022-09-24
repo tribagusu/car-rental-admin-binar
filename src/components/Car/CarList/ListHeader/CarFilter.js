@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 // comp
@@ -26,6 +26,11 @@ const CarFilter = () => {
     setShowMedium,
     setShowLarge,
   }
+
+  // const dispatch = useDispatch()
+  // useEffect(() => {
+  //   dispatch(handleCarFiltered(showAll))
+  // }, [])
 
   return (
     <section className="car-filter">

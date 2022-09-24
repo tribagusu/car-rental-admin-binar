@@ -1,11 +1,15 @@
 import axios from "axios"
 import swal from "sweetalert"
 
-export const postAddCar = (payload, navigate) => {
+export const postAddCar = (data, navigate) => {
   axios
-    .post("https://bootcamp-rent-car.herokuapp.com/admin/car", payload)
+    .post("https://bootcamp-rent-car.herokuapp.com/admin/car", data, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    })
     .then((res) => {
-      console.log(res.status)
+      console.log(res)
       if (res.status === 201) {
         swal({
           title: "Saved!",

@@ -31,9 +31,9 @@ const ModalDelete = (props) => {
       .catch((err) => console.log(err.message))
   }
 
-  useEffect(() => {
-    dispatch(handleCars())
-  }, [handleDelete])
+  // useEffect(() => {
+  //   dispatch(handleCars())
+  // }, [handleDelete])
 
   return (
     <div className="modal-delete__backdrop df-center">

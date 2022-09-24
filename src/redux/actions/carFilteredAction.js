@@ -1,3 +1,4 @@
+import { valueToPercent } from "@mui/base"
 import axios from "axios"
 import TYPES from "../types"
 
@@ -11,8 +12,6 @@ export const handleCarFiltered = (value) => (dispatch) => {
         .filter(
           (data) => data.category === value.cat1 || data.category === value.cat2
         )
-
-      console.log(dataFiltered)
 
       dispatch({
         type: TYPES.GET_CAR_FILTERED,

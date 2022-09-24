@@ -11,10 +11,15 @@ const CarAddNew = () => {
   const [carImage, setCarImage] = useState("")
   const [carCategory, setCarCategory] = useState(undefined)
 
+  const onImageUpload = (e) => {
+    const file = e.target.files[0]
+    setCarImage(file)
+  }
+
   const props = {
     setCarName,
     setCarPrice,
-    setCarImage,
+    onImageUpload,
     setCarCategory,
     carName,
     carPrice,
