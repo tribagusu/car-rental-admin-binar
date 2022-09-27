@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 
 // func
 import { handleCars } from "../../../../redux/actions/carsAction"
-import { handleCarFiltered } from "../../../../redux/actions/carFilteredAction"
 import { formatCurrency } from "../../../../utils/formatCurrency"
 
 // library
@@ -20,7 +19,6 @@ import ButtonEdit from "./ButtonEdit"
 
 const CarCard = () => {
   const { cars } = useSelector((state) => state.cars)
-  // const { searchTerm } = useSelector((state) => state.search)
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -30,8 +28,6 @@ const CarCard = () => {
   // get time updated
   const car = cars.map((car) => car)
   const timeUpdated = moment(car.updatedAt).format("MMM D YYYY, hh:mm")
-
-  // const data = carFiltered.length ? carFiltered : cars
 
   return (
     <div className="car-card__container">

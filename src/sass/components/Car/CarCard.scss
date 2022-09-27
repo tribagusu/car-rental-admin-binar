@@ -22,11 +22,15 @@
       justify-content: space-between;
 
       .car-card__image {
-        width: 100%;
+        width: 303px;
         height: 222px;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        img {
+          width: 100%;
+        }
       }
 
       .car-card__content {
