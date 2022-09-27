@@ -25,26 +25,22 @@ const Chart = () => {
     ],
   })
 
-  //# function sort by number
-  function sortArray(a, b) {
-    return a - b
-  }
-  const sortedOrder = dataOrder.sort(sortArray)
-
-  //# function count duplicate
-  const newOrder = sortedOrder.reduce((accVal, val) => {
-    accVal[val] = (accVal[val] || 0) + 1
-    return accVal
-  }, {})
+  //# function sort and count duplicate
+  const chartOrder = dataOrder
+    .sort((a, b) => a.localeCompare(b))
+    .reduce((accVal, val) => {
+      accVal[val] = (accVal[val] || 0) + 1
+      return accVal
+    }, {})
 
   useEffect(() => {
-    console.log(newOrder)
+    console.log(chartOrder)
     setDataChart({
-      labels: Object.keys(newOrder),
+      labels: Object.keys(chartOrder),
       datasets: [
         {
           label: "Rented Car",
-          data: Object.values(newOrder),
+          data: Object.values(chartOrder),
           backgroundColor: "#586B90",
         },
       ],
