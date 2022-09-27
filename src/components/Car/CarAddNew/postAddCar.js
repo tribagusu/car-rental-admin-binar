@@ -17,7 +17,7 @@ export const postAddCar = (data, navigate) => {
           icon: "success",
           timer: 2000,
         })
-        navigate(-1)
+        navigate("/cars")
       }
     })
     .catch((err) => console.log(err.message))

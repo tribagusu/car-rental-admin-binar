@@ -1,17 +1,15 @@
-import { useEffect } from "react"
 import axios from "axios"
 import swal from "sweetalert"
-import { useDispatch } from "react-redux"
+
+import { useNavigate } from "react-router-dom"
 
 // asset
 import modalImg from "../../../../../assets/modal-img.png"
 
-// func
-import { handleCars } from "../../../../../redux/actions/carsAction"
-
 const ModalDelete = (props) => {
   const { handleModal, carId } = props
-  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
 
   const handleDelete = (id) => {
     axios
@@ -26,14 +24,11 @@ const ModalDelete = (props) => {
             timer: 2000,
           })
           handleModal()
+          navigate("/cars")
         }
       })
       .catch((err) => console.log(err.message))
   }
-
-  // useEffect(() => {
-  //   dispatch(handleCars())
-  // }, [handleDelete])
 
   return (
     <div className="modal-delete__backdrop df-center">
