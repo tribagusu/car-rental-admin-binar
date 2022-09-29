@@ -1,5 +1,5 @@
+import React from "react"
 import { Navigate } from "react-router-dom"
-import React, { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 import { useTransition, animated } from "react-spring"
 
