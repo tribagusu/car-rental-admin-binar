@@ -23,8 +23,8 @@ const ModalDelete = (props) => {
             icon: "success",
             timer: 2000,
           })
-          handleModal()
           navigate("/cars")
+          handleModal()
         }
       })
       .catch((err) => console.log(err.message))

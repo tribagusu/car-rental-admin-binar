@@ -23,7 +23,7 @@ const CarCard = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(handleCars())
-  }, [])
+  }, [dispatch])
 
   // get time updated
   const car = cars.map((car) => car)
