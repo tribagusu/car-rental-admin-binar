@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import swal from "sweetalert"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
 import { useNavigate, Navigate, useLocation } from "react-router-dom"
 
 // components
