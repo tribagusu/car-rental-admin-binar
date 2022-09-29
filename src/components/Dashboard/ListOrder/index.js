@@ -13,7 +13,7 @@ const ListOrder = () => {
 
   useEffect(() => {
     dispatch(handleOrders())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
