@@ -24,7 +24,7 @@ const CarEdit = () => {
   useEffect(() => {
     const id = param.id
     dispatch(handleCar(id))
-  }, [])
+  }, [dispatch, param.id])
 
   const props = {
     setCarName,
