@@ -45,7 +45,7 @@ const Chart = () => {
         },
       ],
     })
-  }, [chartOrder])
+  }, [dataOrder])
 
   return (
     <section className="rented-car-chart">
