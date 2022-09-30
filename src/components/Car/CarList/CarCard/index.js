@@ -18,21 +18,25 @@ import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
 
 const CarCard = () => {
-  const { cars } = useSelector((state) => state.cars)
+  const { cars, carSearched } = useSelector((state) => state.cars)
+  const { searchQuery } = useSelector((state) => state.searchQuery)
 
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(handleCars())
-  }, [dispatch])
+  }, [])
 
   // get time updated
   const car = cars.map((car) => car)
   const timeUpdated = moment(car.updatedAt).format("MMM D YYYY, hh:mm")
 
+  // show cars or cars by searched
+  const data = carSearched.length ? carSearched : cars
+
   return (
     <div className="car-card__container">
-      {!!cars.length ? (
-        cars.map((car) => (
+      {!!data.length ? (
+        data.map((car) => (
           <div key={car.id} className="car-card">
             <>
               <div className="car-card__body">

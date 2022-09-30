@@ -2,7 +2,7 @@ import { combineReducers } from "redux"
 import authReducer from "./authReducer"
 import showNavReducer from "./showNavReducer"
 import carsReducer from "./carsReducer"
-import searchReducer from "./searchReducer"
+import searchQueryReducer from "./searchQueryReducer"
 import dataOrderReducer from "./dataOrderReducer"
 import carFilteredReducer from "./carFilteredReducer"
 
@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   dataOrder: dataOrderReducer,
   showNav: showNavReducer,
   cars: carsReducer,
-  search: searchReducer,
+  searchQuery: searchQueryReducer,
   carFiltered: carFilteredReducer,
 })
 

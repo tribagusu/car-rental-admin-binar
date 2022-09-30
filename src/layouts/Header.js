@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useCallback, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 // icons
 import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
@@ -14,7 +14,17 @@ const Header = () => {
   // redux state
   const { showNav } = useSelector((state) => state.showNav)
   const { carSearched } = useSelector((state) => state.cars)
+  const { searchQuery } = useSelector((state) => state.searchQuery)
+
   const dispatch = useDispatch()
+
+  // search query function
+  const handleQuery = (e) => {
+    dispatch({
+      type: TYPES.SEARCH_QUERY,
+      payload: e.target.value,
+    })
+  }
 
   // show navigation
   const handleShowNav = () => {
@@ -26,10 +36,11 @@ const Header = () => {
 
   // search function
   const handleSearch = () => {
+    // dispatch(handleQuery())
     dispatch(handleCarSearched(query))
   }
 
-  console.log(carSearched)
+  console.log(carSearched, searchQuery, query)
 
   // show profile detail
   const handleShowProfile = () => {
@@ -55,10 +66,10 @@ const Header = () => {
         <div className="header-main df-center">
           <div className="header-search df-center">
             <input
+              // onChange={handleQuery}
               onChange={(e) => setQuery(e.target.value)}
               type="search"
               placeholder="Search"
-              value={query}
             />
             <button onClick={handleSearch} className="btn-outlined-primary">
               Search
