@@ -34,7 +34,7 @@
 
   .header-main {
     gap: 2rem;
-    margin-right: 6rem;
+    margin-right: 8rem;
 
     .header-search {
       input {
@@ -51,13 +51,45 @@
     }
 
     .header-user {
-      gap: 1rem;
+      position: relative;
 
-      .user-logo {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: $secondary;
+      .user-profile {
+        cursor: pointer;
+
+        .user-logo {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          background: $secondary;
+        }
+      }
+
+      .user-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        left: -70px;
+        top: 40px;
+        width: 150px;
+        height: 60px;
+        padding: 15px 10px;
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 6px;
+
+        small {
+          text-align: center;
+        }
+
+        .user-logout {
+          width: 100%;
+          cursor: pointer;
+
+          h5 {
+            text-align: center;
+          }
+        }
       }
     }
   }
