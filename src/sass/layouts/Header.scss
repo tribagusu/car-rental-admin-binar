@@ -69,9 +69,9 @@
         flex-direction: column;
         justify-content: space-between;
         position: absolute;
-        left: -70px;
+        left: -90px;
         top: 40px;
-        width: 150px;
+        width: 170px;
         height: 60px;
         padding: 15px 10px;
         background: white;
@@ -80,6 +80,8 @@
 
         small {
           text-align: center;
+          color: gray;
+          font-size: 0.9;
         }
 
         .user-logout {
@@ -88,6 +90,12 @@
 
           h5 {
             text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+          }
+
+          h5:hover {
+            color: $primary;
           }
         }
       }
