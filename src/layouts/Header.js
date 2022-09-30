@@ -4,16 +4,19 @@ import { useNavigate } from "react-router-dom"
 import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
 // redux
 import { useDispatch, useSelector } from "react-redux"
+import { handleCarSearched } from "../redux/actions/carsAction"
 import TYPES from "../redux/types"
 
 const Header = () => {
   const [showProfile, setShowProfile] = useState(false)
+  const [query, setQuery] = useState("")
 
   // redux state
   const { showNav } = useSelector((state) => state.showNav)
-  const { searchTerm } = useSelector((state) => state.search)
+  const { carSearched } = useSelector((state) => state.cars)
   const dispatch = useDispatch()
 
+  // show navigation
   const handleShowNav = () => {
     dispatch({
       type: TYPES.SHOW_NAV,
@@ -21,14 +24,12 @@ const Header = () => {
     })
   }
 
-  const handleSearch = (e) => {
-    dispatch({
-      type: TYPES.SEARCH_TERM,
-      payload: e.target.value,
-    })
+  // search function
+  const handleSearch = () => {
+    dispatch(handleCarSearched(query))
   }
 
-  console.log(searchTerm)
+  console.log(carSearched)
 
   // show profile detail
   const handleShowProfile = () => {
@@ -54,12 +55,14 @@ const Header = () => {
         <div className="header-main df-center">
           <div className="header-search df-center">
             <input
-              onChange={handleSearch}
+              onChange={(e) => setQuery(e.target.value)}
               type="search"
               placeholder="Search"
-              value={searchTerm}
+              value={query}
             />
-            <button className="btn-outlined-primary">Search</button>
+            <button onClick={handleSearch} className="btn-outlined-primary">
+              Search
+            </button>
           </div>
           <div className="header-user">
             <div onClick={handleShowProfile} className="user-profile df-center">

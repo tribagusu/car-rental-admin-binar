@@ -1,14 +1,14 @@
 import TYPES from "../types"
 
 const initState = {
-  searchTerm: "",
+  searchQuery: "",
 }
 
 const searchReducer = (state = initState, action) => {
   switch (action.type) {
-    case TYPES.SEARCH_TERM:
+    case TYPES.SEARCH_QUERY:
       return {
-        searchTerm: action.payload,
+        searchQuery: action.payload,
       }
     default:
       return state

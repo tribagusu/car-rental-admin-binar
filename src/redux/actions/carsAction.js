@@ -36,3 +36,19 @@ export const handleOrders = () => (dispatch) => {
     })
     .catch((err) => console.log(err.message))
 }
+
+export const handleCarSearched = (query) => (dispatch) => {
+  axios
+    .get("https://bootcamp-rent-car.herokuapp.com/admin/car")
+    .then((res) => {
+      const keys = ["name"]
+      const data = res.data.filter((item) =>
+        keys.some((key) => item[key].toLowerCase().includes(query))
+      )
+      dispatch({
+        type: TYPES.GET_CAR_SEARCHED,
+        payload: data,
+      })
+    })
+    .catch((err) => console.log(err.message))
+}
