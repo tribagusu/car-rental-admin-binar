@@ -1,17 +1,20 @@
 import React from "react"
 import Shimmer from "./Shimmer"
-import SkeletonElement from "./SkeletonElement"
+import SkeletonBase from "./SkeletonBase"
 
 const SkeletonCard = () => {
   return (
     <div className="skeleton-wrapper">
       <div className="skeleton-card__container">
-        <SkeletonElement type="skeleton-card" />
-        <SkeletonElement type="skeleton-card" />
-        <SkeletonElement type="skeleton-card" />
-        <SkeletonElement type="skeleton-card" />
-        <SkeletonElement type="skeleton-card" />
-        <SkeletonElement type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
+        <SkeletonBase type="skeleton-card" />
       </div>
       <Shimmer />
     </div>
