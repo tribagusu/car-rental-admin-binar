@@ -41,10 +41,11 @@ export const handleCarSearched = (query) => (dispatch) => {
   axios
     .get("https://bootcamp-rent-car.herokuapp.com/admin/car")
     .then((res) => {
-      const keys = ["name"]
+      const keys = ["name", "category"]
       const data = res.data.filter((item) =>
         keys.some((key) => item[key].toLowerCase().includes(query))
       )
+      console.log(data)
       dispatch({
         type: TYPES.GET_CAR_SEARCHED,
         payload: data,

@@ -34,7 +34,6 @@ const Chart = () => {
     }, {})
 
   useEffect(() => {
-    // console.log(chartOrder)
     setDataChart({
       labels: Object.keys(chartOrder),
       datasets: [
