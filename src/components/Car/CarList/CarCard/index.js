@@ -16,6 +16,7 @@ import noImage from "../../../../assets/no-image.png"
 // comp
 import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
+import SkeletonCard from "../../../Skeletons/SkeletonCard"
 
 const CarCard = () => {
   const { cars, carSearched } = useSelector((state) => state.cars)
@@ -66,7 +67,7 @@ const CarCard = () => {
           </div>
         ))
       ) : (
-        <p>Loading...</p>
+        <SkeletonCard />
       )}
     </div>
   )
