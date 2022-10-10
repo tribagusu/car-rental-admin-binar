@@ -6,7 +6,7 @@ import FormLogin from "./FormLogin"
 import ErrorLoginCard from "./ErrorLoginCard"
 
 const Login = (props) => {
-  const { errMsg } = props
+  const { errMsg, logging } = props
 
   return (
     <>
@@ -24,6 +24,11 @@ const Login = (props) => {
             <h2>Welcome Admin BCR!</h2>
             {errMsg && <ErrorLoginCard />}
             <FormLogin {...props} />
+            {logging && !errMsg && (
+              <div>
+                <p>Signing...</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

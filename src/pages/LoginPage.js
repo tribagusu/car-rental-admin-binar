@@ -11,14 +11,14 @@ const LoginPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [errMsg, setErrMsg] = useState(false)
+  const [logging, setLogging] = useState(false)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const location = useLocation()
-  // const from = location.state?.from?.pathname || "/"
   const user = localStorage.getItem("token")
 
   const handleSubmit = (e) => {
+    setLogging(true)
     e.preventDefault()
     const payload = {
       email,
@@ -34,6 +34,8 @@ const LoginPage = () => {
     setPassword,
     handleSubmit,
     errMsg,
+    setLogging,
+    logging,
   }
 
   return (
