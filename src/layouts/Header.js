@@ -11,6 +11,7 @@ const Header = (props) => {
   const { query, handleQuery, handleSearch } = props
 
   const [showProfile, setShowProfile] = useState(false)
+  const user = localStorage.getItem("token")
 
   // redux state
   const { showNav } = useSelector((state) => state.showNav)

@@ -1,6 +1,9 @@
 .signin {
   display: flex;
   height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 99;
 
   .left {
     width: 100%;
@@ -18,6 +21,7 @@
     display: flex;
     flex-direction: column;
     min-width: 600px;
+    background: #f4f5f7;
 
     .signin-container {
       flex-direction: column;
