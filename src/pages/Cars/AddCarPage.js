@@ -3,8 +3,6 @@ import { Navigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 
 //# comp
-import Header from "../../layouts/Header"
-import Sidebar from "../../layouts/Sidebar"
 import NavCars from "../../layouts/Navbar/NavCars"
 import CarAddNew from "../../components/Car/CarAddNew"
 
@@ -16,8 +14,6 @@ const AddCarPage = () => {
     <>
       {user ? (
         <main>
-          <Header />
-          <Sidebar />
           <section className="add-car-page">
             {showNav && (
               <nav className="nav-container">

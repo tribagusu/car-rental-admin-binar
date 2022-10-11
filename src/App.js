@@ -6,10 +6,11 @@ import LoginPage from "./pages/LoginPage"
 import CarsPage from "./pages/Cars/CarsPage"
 import AddCarPage from "./pages/Cars/AddCarPage"
 import EditCarPage from "./pages/Cars/EditCarPage"
+import Layout from "./layouts"
 
 function App() {
   return (
-    <>
+    <Layout>
       <Routes>
         <Route path="dashboard" element={<DashboardPage />} />
         <Route path="cars" element={<CarsPage />} />
@@ -18,7 +19,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="*" element={<Navigate to="dashboard" replace />} />
       </Routes>
-    </>
+    </Layout>
   )
 }
 

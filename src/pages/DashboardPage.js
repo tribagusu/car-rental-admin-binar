@@ -10,8 +10,6 @@ import { useTransition, animated } from "react-spring"
 // comp
 import Dashboard from "../components/Dashboard"
 import NavDashboard from "../layouts/Navbar/NavDashboard"
-import Header from "../layouts/Header"
-import Sidebar from "../layouts/Sidebar"
 
 const DashboardPage = () => {
   const { showNav } = useSelector((state) => state.showNav)
@@ -26,8 +24,6 @@ const DashboardPage = () => {
     <>
       {user ? (
         <main>
-          <Header />
-          <Sidebar />
           <section className="dashboard-page">
             {transition(
               (style, item) =>

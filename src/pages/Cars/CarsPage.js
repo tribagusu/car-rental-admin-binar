@@ -7,8 +7,6 @@ import { useTransition, animated } from "react-spring"
 //# comp
 import CarList from "../../components/Car"
 import NavCars from "../../layouts/Navbar/NavCars"
-import Header from "../../layouts/Header"
-import Sidebar from "../../layouts/Sidebar"
 //# redux
 import { useDispatch, useSelector } from "react-redux"
 import { handleCarSearched } from "../../redux/actions/carsAction"
@@ -50,8 +48,6 @@ const CarsPage = () => {
     <>
       {user ? (
         <>
-          <Header {...props} />
-          <Sidebar />
           <section className="cars-page">
             {transition(
               (style, item) =>
