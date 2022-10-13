@@ -4,7 +4,7 @@ import TYPES from "../types"
 
 export const handleCarFiltered = (value) => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-car.herokuapp.com/admin/car")
+    .get("https://bootcamp-rent-cars.herokuapp.com/admin/car")
     .then((res) => {
       const data = res.data
       const dataFiltered = data

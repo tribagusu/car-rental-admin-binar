@@ -1,13 +1,17 @@
 import axios from "axios"
 import TYPES from "../types"
+import access_token from "../../hooks/accessToken"
 
 export const handleCars = () => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-car.herokuapp.com/admin/car")
+    .get("https://bootcamp-rent-cars.herokuapp.com/admin/v2/car", {
+      headers: { access_token },
+    })
     .then((res) => {
+      console.log(res.data.cars)
       dispatch({
         type: TYPES.GET_CARS,
-        payload: res.data,
+        payload: res.data.cars,
       })
     })
     .catch((err) => console.log(err.message))
@@ -15,7 +19,7 @@ export const handleCars = () => (dispatch) => {
 
 export const handleCar = (id) => (dispatch) => {
   axios
-    .get(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`)
+    .get(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`)
     .then((res) => {
       dispatch({
         type: TYPES.GET_CAR,
@@ -27,7 +31,7 @@ export const handleCar = (id) => (dispatch) => {
 
 export const handleOrders = () => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-car.herokuapp.com/admin/order")
+    .get("https://bootcamp-rent-cars.herokuapp.com/admin/order")
     .then((res) => {
       dispatch({
         type: TYPES.GET_ORDERS,
@@ -39,7 +43,7 @@ export const handleOrders = () => (dispatch) => {
 
 export const handleCarSearched = (query) => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-car.herokuapp.com/admin/car")
+    .get("https://bootcamp-rent-car.herokuapp.com/admin/v2/car")
     .then((res) => {
       const keys = ["name", "category"]
       const data = res.data.filter((item) =>

@@ -2,7 +2,7 @@ import TYPES from "../types"
 import axios from "axios"
 import moment from "moment/moment"
 
-const url = "https://bootcamp-rent-car.herokuapp.com/admin/order"
+const url = "https://bootcamp-rent-cars.herokuapp.com/admin/order"
 
 export const handleDataOrder = (value) => {
   return (dispatch) => {
