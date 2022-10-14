@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 
@@ -17,27 +17,24 @@ import noImage from "../../../../assets/no-image.png"
 import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
 import SkeletonCard from "../../../Skeletons/SkeletonCard"
+import CarPagination from "../CarPagination"
 
-const CarCard = () => {
-  const { cars, carSearched } = useSelector((state) => state.cars)
-  const { searchQuery } = useSelector((state) => state.searchQuery)
+const CarCard = ({ page }) => {
+  const { cars } = useSelector((state) => state.cars)
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(handleCars())
-  }, [])
+    dispatch(handleCars(page))
+  }, [page])
 
   // get time updated
   const car = cars.map((car) => car)
   const timeUpdated = moment(car.updatedAt).format("MMM D YYYY, hh:mm")
 
-  // show cars or cars by searched
-  const data = carSearched.length ? carSearched : cars
-
   return (
     <div className="car-card__container">
-      {!!data.length ? (
-        data.map((car) => (
+      {!!cars.length ? (
+        cars.map((car) => (
           <div key={car.id} className="car-card">
             <>
               <div className="car-card__body">

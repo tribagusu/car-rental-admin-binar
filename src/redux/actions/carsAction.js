@@ -2,11 +2,14 @@ import axios from "axios"
 import TYPES from "../types"
 import access_token from "../../hooks/accessToken"
 
-export const handleCars = () => (dispatch) => {
+export const handleCars = (page) => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-cars.herokuapp.com/admin/v2/car", {
-      headers: { access_token },
-    })
+    .get(
+      `https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?page=${page}&pageSize=9`,
+      {
+        headers: { access_token },
+      }
+    )
     .then((res) => {
       // console.log(res.data.cars)
       dispatch({

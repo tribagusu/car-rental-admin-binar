@@ -1,0 +1,13 @@
+.car-pagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 3rem;
+  margin-left: auto;
+
+  button[disabled] {
+    background: transparent;
+    color: $primary;
+    opacity: 0.5;
+    cursor: default;
+  }
+}
