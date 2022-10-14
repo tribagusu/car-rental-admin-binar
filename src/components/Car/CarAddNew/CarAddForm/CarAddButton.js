@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 // func
 import { postAddCar } from "../postAddCar"
 
 const CarAddButton = (props) => {
   const { carName, carPrice, carImage, carCategory } = props
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   // func
@@ -19,6 +21,7 @@ const CarAddButton = (props) => {
     data.append("price", carPrice)
     data.append("image", carImage)
     postAddCar(data, navigate)
+    setLoading(true)
   }
 
   return (
@@ -26,8 +29,8 @@ const CarAddButton = (props) => {
       <button onClick={handleGoBack} className="btn-outlined-primary">
         Cancel
       </button>
-      <button onClick={handleAddCar} className="btn-primary">
-        Save
+      <button onClick={() => handleAddCar()} className="btn-primary">
+        {loading ? <p>Saving...</p> : <p>Save</p>}
       </button>
     </div>
   )
