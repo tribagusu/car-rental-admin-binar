@@ -1,5 +1,6 @@
 import axios from "axios"
 import swal from "sweetalert"
+import access_token from "../../../../../hooks/accessToken"
 
 import { useNavigate } from "react-router-dom"
 
@@ -13,7 +14,9 @@ const ModalDelete = (props) => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`)
+      .delete(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, {
+        headers: { access_token },
+      })
       .then((res) => {
         console.log(res.status)
         if (res.status === 200) {

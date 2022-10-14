@@ -13,7 +13,7 @@ export const handleDataOrder = (value) => {
         headers: { access_token },
       })
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         //# get data start_rent
         const datas = res.data.orders
         const dataRent = datas.map((data) =>

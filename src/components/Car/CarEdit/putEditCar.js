@@ -1,9 +1,13 @@
 import axios from "axios"
 import swal from "sweetalert"
+import access_token from "../../../hooks/accessToken"
 
-export const putEditCar = (payload, navigate, id) => {
+export const putEditCar = (data, navigate, id) => {
   axios
-    .put(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`, payload)
+    .put(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, {
+      headers: { access_token },
+      Body: data,
+    })
     .then((res) => {
       console.log(res.status)
       if (res.status === 200) {

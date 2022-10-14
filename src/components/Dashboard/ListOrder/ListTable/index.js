@@ -68,7 +68,7 @@ const ListTable = () => {
                   {order.User.email}
                 </TableCell>
                 <TableCell style={{ width: "13.5%" }}>
-                  {order.User.email}
+                  {order.Car?.name}
                 </TableCell>
                 <TableCell style={{ width: "13.5%" }}>
                   {moment(order.start_rent_at).format("ll")}
@@ -79,7 +79,9 @@ const ListTable = () => {
                 <TableCell style={{ width: "13.5%" }}>
                   {formatCurrency(order.total_price)}
                 </TableCell>
-                <TableCell style={{ width: "13.5%" }}>{order.CarId}</TableCell>
+                <TableCell style={{ width: "10.5%" }}>
+                  {order.Car?.category}
+                </TableCell>
               </TableRow>
             ))}
 

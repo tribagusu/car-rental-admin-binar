@@ -8,7 +8,7 @@ export const handleCars = () => (dispatch) => {
       headers: { access_token },
     })
     .then((res) => {
-      console.log(res.data.cars)
+      // console.log(res.data.cars)
       dispatch({
         type: TYPES.GET_CARS,
         payload: res.data.cars,
@@ -19,7 +19,9 @@ export const handleCars = () => (dispatch) => {
 
 export const handleCar = (id) => (dispatch) => {
   axios
-    .get(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`)
+    .get(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, {
+      headers: { access_token },
+    })
     .then((res) => {
       dispatch({
         type: TYPES.GET_CAR,
@@ -31,11 +33,17 @@ export const handleCar = (id) => (dispatch) => {
 
 export const handleOrders = () => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-cars.herokuapp.com/admin/order")
+    .get(
+      "https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?sort=created_at%3Adesc&page=1&pageSize=10",
+      {
+        headers: { access_token },
+      }
+    )
     .then((res) => {
+      // console.log(res)
       dispatch({
         type: TYPES.GET_ORDERS,
-        payload: res.data,
+        payload: res.data.orders,
       })
     })
     .catch((err) => console.log(err.message))

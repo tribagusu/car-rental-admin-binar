@@ -32,13 +32,11 @@ const CarEditForm = (props) => {
           />
         </div>
         <div className="form-upload">
-          <label>
-            Foto<span>*</span>
-          </label>
+          <label>Foto</label>
           <input
             onChange={(e) => setCarImage(e.target.value)}
             type="file"
-            required
+            value={car.image}
           />
         </div>
         <div>
@@ -46,9 +44,9 @@ const CarEditForm = (props) => {
             Kategori<span>*</span>
           </label>
           <select onChange={(e) => setCarCategory(e.target.value)} required>
-            <option value="small">2 - 4 Orang</option>
-            <option value="medium">4 - 6 Orang</option>
-            <option value="large">6 - 8 Orang</option>
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
           </select>
         </div>
         <div>

@@ -15,13 +15,12 @@ const CarEditButton = (props) => {
   }
   const handleEditCar = () => {
     const id = param.id
-    const payload = {
-      name: carName,
-      category: carCategory,
-      price: carPrice,
-      image: carImage,
-    }
-    putEditCar(payload, navigate, id)
+    const data = new FormData()
+    data.append("name", carName)
+    data.append("category", carCategory)
+    data.append("price", carPrice)
+    data.append("image", carImage)
+    putEditCar(data, navigate, id)
   }
 
   return (

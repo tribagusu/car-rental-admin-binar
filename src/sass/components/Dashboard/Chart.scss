@@ -4,5 +4,18 @@
   .chart-container {
     height: 100%;
     width: 1000px;
+    position: relative;
+
+    .chart_total-order {
+      position: absolute;
+      top: 40%;
+      left: -80px;
+      transform: rotate(270deg);
+    }
+
+    .chart_date-order {
+      margin-top: 20px;
+      text-align: center;
+    }
   }
 }

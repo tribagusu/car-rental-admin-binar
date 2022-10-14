@@ -50,7 +50,8 @@ const Chart = () => {
     <section className="rented-car-chart">
       <div className="chart-container">
         <Bar data={dataChart} />
-        <p></p>
+        <p className="chart_total-order">Total Order</p>
+        <p className="chart_date-order">Date</p>
       </div>
     </section>
   )
