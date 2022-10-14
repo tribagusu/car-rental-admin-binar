@@ -33,11 +33,7 @@ const CarEditForm = (props) => {
         </div>
         <div className="form-upload">
           <label>Foto</label>
-          <input
-            onChange={(e) => setCarImage(e.target.value)}
-            type="file"
-            value={car.image}
-          />
+          <input onChange={(e) => setCarImage(e.target.value)} type="file" />
         </div>
         <div>
           <label>
