@@ -23,7 +23,7 @@ const CarFilterMedium = (props) => {
       className={showMedium ? "btn-active" : "btn-passive"}
       onClick={handleShowMedium}
     >
-      4 - 6 people
+      Medium
     </button>
   )
 }

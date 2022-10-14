@@ -24,7 +24,7 @@ const CarFilterLarge = (props) => {
       className={showLarge ? "btn-active" : "btn-passive"}
       onClick={handleShowLarge}
     >
-      6 - 8 people
+      Large
     </button>
   )
 }

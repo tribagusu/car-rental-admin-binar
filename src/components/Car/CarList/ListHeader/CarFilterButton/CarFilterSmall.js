@@ -25,7 +25,7 @@ const CarFilterSmall = (props) => {
       className={showSmall ? "btn-active" : "btn-passive"}
       onClick={handleShowSmall}
     >
-      2 - 4 people
+      Small
     </button>
   )
 }
