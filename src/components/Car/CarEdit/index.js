@@ -26,11 +26,17 @@ const CarEdit = () => {
     dispatch(handleCar(id))
   }, [dispatch, param.id])
 
+  const onImageUpload = (e) => {
+    const file = e.target.files[0]
+    setCarImage(file)
+  }
+
   const props = {
     setCarName,
     setCarPrice,
     setCarImage,
     setCarCategory,
+    onImageUpload,
     carName,
     carPrice,
     carImage,

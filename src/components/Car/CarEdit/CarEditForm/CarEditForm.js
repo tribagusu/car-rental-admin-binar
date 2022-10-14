@@ -3,7 +3,13 @@ import { useSelector } from "react-redux"
 const CarEditForm = (props) => {
   const { car } = useSelector((state) => state.cars)
 
-  const { setCarName, setCarPrice, setCarImage, setCarCategory } = props
+  const {
+    setCarName,
+    setCarPrice,
+    setCarImage,
+    setCarCategory,
+    onImageUpload,
+  } = props
 
   return (
     <section className="car-edit-form__container">
@@ -33,7 +39,7 @@ const CarEditForm = (props) => {
         </div>
         <div className="form-upload">
           <label>Foto</label>
-          <input onChange={(e) => setCarImage(e.target.value)} type="file" />
+          <input onChange={onImageUpload} type="file" />
         </div>
         <div>
           <label>

@@ -4,9 +4,8 @@ import access_token from "../../../hooks/accessToken"
 
 export const putEditCar = (data, navigate, id) => {
   axios
-    .put(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, {
+    .put(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, data, {
       headers: { access_token },
-      Body: data,
     })
     .then((res) => {
       console.log(res.status)
