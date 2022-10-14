@@ -7,10 +7,9 @@ const ChartFilter = (props) => {
         <p>Month</p>
         <div className="filter">
           <select onChange={(e) => setValue(e.target.value)}>
-            <option value={"Sep"} defaultValue>
-              Sep - 2022
+            <option value={"Oct"} defaultValue>
+              Oct - 2022
             </option>
-            <option value={"Oct"}>Oct - 2022</option>
             <option value={"Nov"}>Nov - 2022</option>
             <option value={"Dec"}>Dec - 2022</option>
           </select>

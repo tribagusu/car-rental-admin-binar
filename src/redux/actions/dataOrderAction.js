@@ -1,16 +1,21 @@
 import TYPES from "../types"
 import axios from "axios"
 import moment from "moment/moment"
+import access_token from "../../hooks/accessToken"
 
-const url = "https://bootcamp-rent-cars.herokuapp.com/admin/order"
+const url =
+  "https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?sort=created_at%3Adesc&page=1&pageSize=10"
 
 export const handleDataOrder = (value) => {
   return (dispatch) => {
     axios
-      .get(url)
+      .get(url, {
+        headers: { access_token },
+      })
       .then((res) => {
+        console.log(res)
         //# get data start_rent
-        const datas = res.data
+        const datas = res.data.orders
         const dataRent = datas.map((data) =>
           moment(data.start_rent_at).format("D MMM")
         )
