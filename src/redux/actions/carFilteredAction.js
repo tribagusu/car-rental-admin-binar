@@ -1,21 +1,22 @@
-import { valueToPercent } from "@mui/base"
 import axios from "axios"
 import TYPES from "../types"
+import access_token from "../../hooks/accessToken"
 
-export const handleCarFiltered = (value) => (dispatch) => {
+export const handleCarFiltered = (category, page) => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-cars.herokuapp.com/admin/car")
+    .get(
+      `https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?category=${category}&page=${page}&pageSize=9`,
+      {
+        headers: {
+          access_token,
+        },
+      }
+    )
     .then((res) => {
-      const data = res.data
-      const dataFiltered = data
-        .map((data) => data)
-        .filter(
-          (data) => data.category === value.cat1 || data.category === value.cat2
-        )
-
+      console.log(res.data.cars)
       dispatch({
         type: TYPES.GET_CAR_FILTERED,
-        payload: dataFiltered,
+        payload: res.data.cars,
       })
     })
     .catch((err) => console.log(err.message))

@@ -28,7 +28,7 @@ const Header = (props) => {
     })
   }
 
-  console.log(carSearched, query)
+  // console.log(carSearched, query)
 
   // show profile detail
   const handleShowProfile = () => {
