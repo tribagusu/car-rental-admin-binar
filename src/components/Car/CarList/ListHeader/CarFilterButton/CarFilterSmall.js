@@ -16,7 +16,7 @@ const CarFilterSmall = (props) => {
 
   const dispatch = useDispatch()
   const handleShowSmall = () => {
-    setShowSmall("small")
+    setShowSmall(true)
     setShowMedium(false)
     setShowLarge(false)
     setShowAll(false)

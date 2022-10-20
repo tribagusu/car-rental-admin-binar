@@ -1,10 +1,16 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { handleCars } from "../../../../../redux/actions/carsAction"
+import { handleCarFiltered } from "../../../../../redux/actions/carFilteredAction"
 
 const CarFilterAll = (props) => {
-  const { showAll, setShowAll, setShowSmall, setShowMedium, setShowLarge } =
-    props
+  const {
+    showAll,
+    setShowAll,
+    setShowSmall,
+    setShowMedium,
+    setShowLarge,
+    page,
+  } = props
 
   const dispatch = useDispatch()
   const handleShowAll = () => {
@@ -12,6 +18,7 @@ const CarFilterAll = (props) => {
     setShowSmall(false)
     setShowMedium(false)
     setShowLarge(false)
+    dispatch(handleCarFiltered("", page))
   }
 
   return (

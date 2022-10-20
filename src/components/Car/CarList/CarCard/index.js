@@ -17,10 +17,10 @@ import noImage from "../../../../assets/no-image.png"
 import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
 import SkeletonCard from "../../../Skeletons/SkeletonCard"
-import CarPagination from "../CarPagination"
 
 const CarCard = ({ page }) => {
   const { cars } = useSelector((state) => state.cars)
+  const { carFiltered } = useSelector((state) => state.carFiltered)
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -31,10 +31,13 @@ const CarCard = ({ page }) => {
   const car = cars.map((car) => car)
   const timeUpdated = moment(car.updatedAt).format("MMM D YYYY, hh:mm")
 
+  // cars or carFiltered
+  const data = carFiltered.length ? carFiltered : cars
+
   return (
     <div className="car-card__container">
-      {!!cars.length ? (
-        cars.map((car) => (
+      {!!data.length ? (
+        data.map((car) => (
           <div key={car.id} className="car-card">
             <>
               <div className="car-card__body">
