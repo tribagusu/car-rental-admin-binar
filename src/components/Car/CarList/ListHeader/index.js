@@ -3,12 +3,12 @@ import Breadcrumb from "./Breadcrumb"
 import CarFilter from "./CarFilter"
 import CarListTitle from "./CarListTitle"
 
-const ListHeader = () => {
+const ListHeader = ({ page }) => {
   return (
     <>
       <Breadcrumb />
       <CarListTitle />
-      <CarFilter />
+      <CarFilter page={page} />
     </>
   )
 }

@@ -5,19 +5,22 @@ import { useDispatch } from "react-redux"
 import { handleCarFiltered } from "../../../../../redux/actions/carFilteredAction"
 
 const CarFilterSmall = (props) => {
-  const { showSmall, setShowAll, setShowSmall, setShowMedium, setShowLarge } =
-    props
+  const {
+    showSmall,
+    setShowAll,
+    setShowSmall,
+    setShowMedium,
+    setShowLarge,
+    page,
+  } = props
 
   const dispatch = useDispatch()
   const handleShowSmall = () => {
-    setShowSmall({
-      cat1: "small",
-      cat2: "2 - 4 orang",
-    })
+    setShowSmall("small")
     setShowMedium(false)
     setShowLarge(false)
     setShowAll(false)
-    dispatch(handleCarFiltered(showSmall))
+    dispatch(handleCarFiltered("small", page))
   }
 
   return (

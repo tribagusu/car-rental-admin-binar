@@ -12,7 +12,7 @@ const CarList = (props) => {
   return (
     <section className="car-list">
       <main className="car-list-container">
-        <ListHeader />
+        <ListHeader page={page} />
         <CarCard {...props} page={page} />
         <CarPagination page={page} setPage={setPage} />
       </main>

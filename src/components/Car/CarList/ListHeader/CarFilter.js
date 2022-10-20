@@ -9,7 +9,7 @@ import CarFilterSmall from "./CarFilterButton/CarFilterSmall"
 
 import { handleCarFiltered } from "../../../../redux/actions/carFilteredAction"
 
-const CarFilter = () => {
+const CarFilter = ({ page }) => {
   const [showAll, setShowAll] = useState(true)
   const [showSmall, setShowSmall] = useState(false)
   const [showMedium, setShowMedium] = useState(false)
@@ -25,6 +25,7 @@ const CarFilter = () => {
     setShowSmall,
     setShowMedium,
     setShowLarge,
+    page,
   }
 
   // const dispatch = useDispatch()
