@@ -1,10 +1,12 @@
 .car-list-title {
   margin-top: 30px;
+  width: 1300px;
 
   .car-list-title-container {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    max-width: 1220px;
 
     button {
       display: flex;

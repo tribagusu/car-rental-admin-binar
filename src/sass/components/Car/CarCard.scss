@@ -2,8 +2,9 @@
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
+  row-gap: 24px;
+  column-gap: 35px;
+  max-width: 1300px;
 
   .car-card {
     background: white;
