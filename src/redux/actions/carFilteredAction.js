@@ -13,7 +13,6 @@ export const handleCarFiltered = (category, page) => (dispatch) => {
       }
     )
     .then((res) => {
-      console.log(res.data.cars)
       dispatch({
         type: TYPES.GET_CAR_FILTERED,
         payload: res.data.cars,

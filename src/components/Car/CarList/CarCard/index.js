@@ -36,7 +36,7 @@ const CarCard = ({ page }) => {
 
   return (
     <div className="car-card__container">
-      {!!data.length ? (
+      {data.length ? (
         data.map((car) => (
           <div key={car.id} className="car-card">
             <>
