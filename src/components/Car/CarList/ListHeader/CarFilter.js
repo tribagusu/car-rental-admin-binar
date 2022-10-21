@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-
+import React, { useState } from "react"
 // comp
 import CarFilterAll from "./CarFilterButton/CarFilterAll"
 import CarFilterLarge from "./CarFilterButton/CarFilterLarge"
 import CarFilterMedium from "./CarFilterButton/CarFilterMedium"
 import CarFilterSmall from "./CarFilterButton/CarFilterSmall"
+import CarPagination from "../CarPagination"
 
-import { handleCarFiltered } from "../../../../redux/actions/carFilteredAction"
-
-const CarFilter = ({ page }) => {
+const CarFilter = ({
+  page,
+  setPage,
+  category,
+  setCategory,
+  data,
+  isLoading,
+  isPreviousData,
+}) => {
   const [showAll, setShowAll] = useState(true)
   const [showSmall, setShowSmall] = useState(false)
   const [showMedium, setShowMedium] = useState(false)
@@ -26,19 +31,25 @@ const CarFilter = ({ page }) => {
     setShowMedium,
     setShowLarge,
     page,
+    setPage,
+    category,
+    setCategory,
+    data,
+    isLoading,
+    isPreviousData,
   }
 
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(handleCarFiltered(showAll))
-  // }, [])
-
   return (
-    <section className="car-filter">
-      <CarFilterAll {...props} />
-      <CarFilterSmall {...props} />
-      <CarFilterMedium {...props} />
-      <CarFilterLarge {...props} />
+    <section className="car-filter-container">
+      <div className="car-filter">
+        <CarFilterAll {...props} />
+        <CarFilterSmall {...props} />
+        <CarFilterMedium {...props} />
+        <CarFilterLarge {...props} />
+      </div>
+      <div className="car-pagination">
+        <CarPagination {...props} />
+      </div>
     </section>
   )
 }

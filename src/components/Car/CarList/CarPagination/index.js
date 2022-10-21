@@ -1,30 +1,25 @@
 import React from "react"
-import { useSelector } from "react-redux"
 
-const CarPagination = ({ setPage, page }) => {
-  const { cars } = useSelector((state) => state.cars)
-
+const CarPagination = ({ setPage, page, data }) => {
   // func
   const nextPage = () => {
     setPage((prev) => prev + 1)
-    window.scroll(0, 0)
   }
   const prevPage = () => {
-    setPage((prev) => prev - 1)
-    window.scroll(0, 0)
+    setPage((prev) => Math.max(prev - 1, 0))
   }
 
   return (
     <nav className="car-pagination">
       <button className="btn-primary" onClick={prevPage} disabled={page === 1}>
-        PrevPage
+        <span>&lt;&lt; Previous Page</span>
       </button>
       <button
         className="btn-primary"
         onClick={nextPage}
-        // disabled={cars.length === 0}
+        disabled={page === data?.pageCount}
       >
-        NextPage
+        <span>Next Page &gt;&gt;</span>
       </button>
     </nav>
   )

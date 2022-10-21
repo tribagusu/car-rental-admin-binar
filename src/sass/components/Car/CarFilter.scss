@@ -1,5 +1,10 @@
-.car-filter {
+.car-filter-container {
   display: flex;
-  gap: 1rem;
-  margin-top: 20px;
+  justify-content: center;
+
+  .car-filter {
+    display: flex;
+    gap: 1rem;
+    margin-top: 20px;
+  }
 }

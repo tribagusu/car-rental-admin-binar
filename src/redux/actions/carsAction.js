@@ -11,7 +11,7 @@ export const handleCars = (page) => (dispatch) => {
       }
     )
     .then((res) => {
-      // console.log(res.data.cars)
+      console.log(res.data)
       dispatch({
         type: TYPES.GET_CARS,
         payload: res.data.cars,
