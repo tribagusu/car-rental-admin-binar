@@ -1,26 +1,14 @@
-import React from "react"
-
 const CarFilterMedium = (props) => {
-  const {
-    showMedium,
-    setShowAll,
-    setShowSmall,
-    setShowMedium,
-    setShowLarge,
-    setCategory,
-  } = props
+  const { setCategory, buttonFilter, setButtonFilter } = props
 
   const handleShowMedium = () => {
-    setShowMedium(true)
-    setShowLarge(false)
-    setShowAll(false)
-    setShowSmall(false)
     setCategory("medium")
+    setButtonFilter("medium")
   }
 
   return (
     <button
-      className={showMedium ? "btn-active" : "btn-passive"}
+      className={buttonFilter === "medium" ? "btn-active" : "btn-passive"}
       onClick={handleShowMedium}
     >
       Medium

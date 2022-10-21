@@ -12,7 +12,7 @@ import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
 import SkeletonCard from "../../../Skeletons/SkeletonCard"
 
-const CarCard = ({ data, isLoading, isFetching }) => {
+const CarCard = ({ data, isLoading }) => {
   return (
     <div className="car-card__container">
       {data?.cars.map((car) => (
@@ -48,7 +48,6 @@ const CarCard = ({ data, isLoading, isFetching }) => {
         </div>
       ))}
       {isLoading && <SkeletonCard />}
-      {isFetching && !data && <div>Loading data..</div>}
     </div>
   )
 }

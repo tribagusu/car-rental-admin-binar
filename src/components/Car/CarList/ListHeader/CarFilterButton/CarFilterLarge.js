@@ -1,26 +1,14 @@
-import React from "react"
-
 const CarFilterLarge = (props) => {
-  const {
-    showLarge,
-    setShowAll,
-    setShowSmall,
-    setShowMedium,
-    setShowLarge,
-    setCategory,
-  } = props
+  const { setCategory, buttonFilter, setButtonFilter } = props
 
   const handleShowLarge = () => {
-    setShowLarge(true)
-    setShowAll(false)
-    setShowSmall(false)
-    setShowMedium(false)
     setCategory("large")
+    setButtonFilter("large")
   }
 
   return (
     <button
-      className={showLarge ? "btn-active" : "btn-passive"}
+      className={buttonFilter === "large" ? "btn-active" : "btn-passive"}
       onClick={handleShowLarge}
     >
       Large

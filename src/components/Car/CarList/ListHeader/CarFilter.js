@@ -15,21 +15,12 @@ const CarFilter = ({
   isLoading,
   isPreviousData,
 }) => {
-  const [showAll, setShowAll] = useState(true)
-  const [showSmall, setShowSmall] = useState(false)
-  const [showMedium, setShowMedium] = useState(false)
-  const [showLarge, setShowLarge] = useState(false)
+  const [buttonFilter, setButtonFilter] = useState("all")
 
   //# props
   const props = {
-    showAll,
-    showSmall,
-    showMedium,
-    showLarge,
-    setShowAll,
-    setShowSmall,
-    setShowMedium,
-    setShowLarge,
+    setButtonFilter,
+    buttonFilter,
     page,
     setPage,
     category,

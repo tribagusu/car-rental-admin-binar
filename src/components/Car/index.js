@@ -11,7 +11,7 @@ const CarList = () => {
   const [category, setCategory] = useState("")
 
   // fetch query
-  const { isLoading, data, isPreviousData, isFetching } = useQuery(
+  const { isLoading, data, isPreviousData } = useQuery(
     ["cars", page, category],
     () => getCars(page, category),
     {
@@ -27,7 +27,6 @@ const CarList = () => {
     data,
     isLoading,
     isPreviousData,
-    isFetching,
   }
 
   return (
