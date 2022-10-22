@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 
 // comp
@@ -9,16 +9,24 @@ import ListTitle from "./ListTitle"
 import { handleOrders } from "../../../redux/actions/carsAction"
 
 const ListOrder = () => {
+  const [page, setPage] = useState(0)
+  const [rowsPerPage, setRowsPerPage] = useState(10)
+
   const dispatch = useDispatch()
-
   useEffect(() => {
-    dispatch(handleOrders())
-  }, [dispatch])
+    dispatch(handleOrders(page, rowsPerPage))
+  }, [dispatch, page, rowsPerPage])
 
+  const props = {
+    page,
+    setPage,
+    rowsPerPage,
+    setRowsPerPage,
+  }
   return (
     <>
       <ListTitle />
-      <ListTable />
+      <ListTable {...props} />
     </>
   )
 }

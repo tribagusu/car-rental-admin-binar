@@ -19,13 +19,9 @@ import { tableHead } from "./tableHead"
 // func
 import { formatCurrency } from "../../../../utils/formatCurrency"
 
-const ListTable = () => {
-  // redux
+const ListTable = (props) => {
+  const { page, setPage, rowsPerPage, setRowsPerPage } = props
   const { orders } = useSelector((state) => state.cars)
-  // state
-  const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(10)
-
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - orders.length) : 0

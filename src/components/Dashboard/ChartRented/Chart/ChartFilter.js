@@ -1,19 +1,26 @@
+import { useSelector } from "react-redux"
+
 const ChartFilter = (props) => {
-  const { value, setValue, getDataOrder } = props
+  const { monthSelected, setMonthSelected, getDataOrder } = props
+  const { theMonthOrderData: months } = useSelector((state) => state.dataOrder)
 
   return (
     <section className="chart-filter">
       <div className="chart-filter-container">
         <p>Month</p>
         <div className="filter">
-          <select onChange={(e) => setValue(e.target.value)}>
-            <option value={"Oct"} defaultValue>
-              Oct - 2022
-            </option>
-            <option value={"Nov"}>Nov - 2022</option>
-            <option value={"Dec"}>Dec - 2022</option>
+          <select
+            defaultValue={true}
+            onChange={(e) => setMonthSelected(e.target.value)}
+          >
+            {months?.map((month, index) => (
+              <option key={index}>{month}</option>
+            ))}
           </select>
-          <button onClick={() => getDataOrder(value)} className="btn-primary">
+          <button
+            onClick={() => getDataOrder(monthSelected)}
+            className="btn-primary"
+          >
             Go
           </button>
         </div>

@@ -9,21 +9,21 @@ import ChartFilter from "./Chart/ChartFilter"
 import Chart from "./Chart/Chart"
 
 const ChartRented = () => {
-  const [value, setValue] = useState("")
+  const [monthSelected, setMonthSelected] = useState("")
 
   //# func
   const dispatch = useDispatch()
-  const getDataOrder = (value) => {
-    dispatch(handleDataOrder(value))
+  const getDataOrder = () => {
+    dispatch(handleDataOrder(monthSelected))
   }
 
   useEffect(() => {
-    getDataOrder(value)
+    getDataOrder(monthSelected)
   }, [])
 
   const props = {
-    value,
-    setValue,
+    monthSelected,
+    setMonthSelected,
     getDataOrder,
   }
 

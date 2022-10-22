@@ -34,10 +34,12 @@ export const handleCar = (id) => (dispatch) => {
     .catch((err) => console.log(err.message))
 }
 
-export const handleOrders = () => (dispatch) => {
+export const handleOrders = (page, rowsPerPage) => (dispatch) => {
   axios
     .get(
-      "https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?sort=created_at%3Adesc&page=1&pageSize=10",
+      `https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?sort=created_at%3Adesc&page=${
+        page + 1
+      }&pageSize=${rowsPerPage}`,
       {
         headers: { access_token },
       }
