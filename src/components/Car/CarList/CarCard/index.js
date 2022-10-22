@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { formatCurrency } from "../../../../utils/formatCurrency"
 // library
 import moment from "moment/moment"
+import { DateTime } from "luxon"
 import { UilUsersAlt, UilClock } from "@iconscout/react-unicons"
 // asset
 import noImage from "../../../../assets/no-image.png"
@@ -32,8 +33,7 @@ const CarCard = ({ data, isLoading }) => {
                 <div className="car-updated">
                   <UilClock />
                   <small>
-                    Updated at{" "}
-                    {moment(car.updatedAt).format("MMM D YYYY, hh:mm")}
+                    Updated at {DateTime.fromISO(car.updatedAt).toFormat("ff")}
                   </small>
                 </div>
                 <div className="car-card__button">
