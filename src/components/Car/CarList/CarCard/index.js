@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 // func
 import { formatCurrency } from "../../../../utils/formatCurrency"
 // library
-import moment from "moment/moment"
 import { DateTime } from "luxon"
 import { UilUsersAlt, UilClock } from "@iconscout/react-unicons"
 // asset

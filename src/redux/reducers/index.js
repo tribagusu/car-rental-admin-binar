@@ -4,7 +4,6 @@ import showNavReducer from "./showNavReducer"
 import carsReducer from "./carsReducer"
 import searchQueryReducer from "./searchQueryReducer"
 import dataOrderReducer from "./dataOrderReducer"
-import carFilteredReducer from "./carFilteredReducer"
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -12,7 +11,6 @@ const rootReducer = combineReducers({
   showNav: showNavReducer,
   cars: carsReducer,
   searchQuery: searchQueryReducer,
-  carFiltered: carFilteredReducer,
 })
 
 export default rootReducer

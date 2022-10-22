@@ -3,7 +3,6 @@ import TYPES from "../types"
 const initState = {
   cars: [],
   car: {},
-  carSearched: [],
   orders: [],
 }
 
@@ -18,11 +17,6 @@ const carReducer = (state = initState, action) => {
       return {
         ...state,
         car: action.payload,
-      }
-    case TYPES.GET_CAR_SEARCHED:
-      return {
-        ...state,
-        carSearched: action.payload,
       }
     case TYPES.GET_ORDERS:
       return {
