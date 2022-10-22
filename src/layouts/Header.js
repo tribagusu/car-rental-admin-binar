@@ -6,10 +6,9 @@ import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
 import { useDispatch, useSelector } from "react-redux"
 import TYPES from "../redux/types"
 
-const Header = (props) => {
-  const { query, handleQuery, handleSearch } = props
+const Header = () => {
   const [showProfile, setShowProfile] = useState(false)
-  const [searchInput, setSearchInput] = useState("")
+  const [searchQuery, setSearchQuery] = useState("")
 
   // redux state
   const { showNav } = useSelector((state) => state.showNav)
@@ -28,6 +27,22 @@ const Header = (props) => {
   const handleLogout = () => {
     localStorage.removeItem("token")
     navigate("/login")
+  }
+
+  // search function
+  const handleQuery = (e) => {
+    setSearchQuery(e.target.value)
+  }
+
+  const handleSearch = (e) => {
+    if (searchQuery.length === 0) {
+      setSearchQuery("")
+    }
+    e.preventDefault()
+    dispatch({
+      type: TYPES.SEARCH_QUERY,
+      payload: searchQuery,
+    })
   }
 
   return (
