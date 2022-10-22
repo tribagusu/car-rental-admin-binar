@@ -4,7 +4,7 @@ import moment from "moment/moment"
 import access_token from "../../hooks/accessToken"
 
 const url =
-  "https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?sort=created_at%3Adesc&page=1&pageSize=10"
+  "https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?sort=created_at%3Adesc&page=1&pageSize=1000"
 
 export const handleDataOrder = (monthSelected) => {
   return (dispatch) => {
@@ -27,7 +27,14 @@ export const handleDataOrder = (monthSelected) => {
             (acc, char) => (acc.includes(char) ? acc : [...acc, char]),
             []
           )
-          .sort((a, b) => b.localeCompare(a))
+          .sort(function sortByMonthYear(a, b) {
+            var as = a.split(" "),
+              bs = b.split(" "),
+              ad = new Date(as[0] + " 1," + as[1]),
+              bd = new Date(bs[0] + " 1," + bs[1])
+            return ad.getTime() - bd.getTime()
+          })
+
         //# filter by value of month
         // const thisMonth = moment(new Date()).format("MMM")
         const order = dataRent.filter((data) =>

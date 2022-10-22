@@ -1,8 +1,5 @@
 import TYPES from "../types"
 
-// const date = new Date()
-// const month = date.getMonth()
-
 const initState = {
   dataOrder: [],
   theMonthOrderData: [],
