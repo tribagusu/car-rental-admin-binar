@@ -1,4 +1,3 @@
-import React, { useState } from "react"
 import { Navigate } from "react-router-dom"
 import { useTransition, animated } from "react-spring"
 //# lazy
@@ -8,28 +7,11 @@ import { useTransition, animated } from "react-spring"
 import CarList from "../../components/Car"
 import NavCars from "../../layouts/Navbar/NavCars"
 //# redux
-import { useDispatch, useSelector } from "react-redux"
-import { handleCarSearched } from "../../redux/actions/carsAction"
+import { useSelector } from "react-redux"
 
 const CarsPage = () => {
   const user = localStorage.getItem("token")
-  // state
-  const [query, setQuery] = useState("")
   const { showNav } = useSelector((state) => state.showNav)
-  const dispatch = useDispatch()
-
-  // query function
-  const handleQuery = (e) => {
-    setQuery(e.target.value)
-    if (!e.target.value.length) {
-      dispatch(handleCarSearched())
-    }
-  }
-
-  // search function
-  const handleSearch = () => {
-    dispatch(handleCarSearched(query))
-  }
 
   // navbar animation
   const transition = useTransition(showNav, {
@@ -37,12 +19,6 @@ const CarsPage = () => {
     enter: { x: 0, y: 0, opacity: 1 },
     delay: 0,
   })
-
-  const props = {
-    query,
-    handleQuery,
-    handleSearch,
-  }
 
   return (
     <>
@@ -57,7 +33,7 @@ const CarsPage = () => {
                   </animated.nav>
                 )
             )}
-            <CarList {...props} />
+            <CarList />
           </section>
         </>
       ) : (

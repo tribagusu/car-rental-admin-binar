@@ -57,9 +57,9 @@ const CarAddForm = (props) => {
             <option selected hidden disabled>
               Pilih Kategori Mobil
             </option>
-            <option value="small">2 - 4 Orang</option>
-            <option value="medium">4 - 6 Orang</option>
-            <option value="large">6 - 8 Orang</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
           </select>
         </div>
         <div>

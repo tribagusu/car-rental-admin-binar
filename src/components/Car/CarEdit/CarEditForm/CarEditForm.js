@@ -46,9 +46,9 @@ const CarEditForm = (props) => {
             Kategori<span>*</span>
           </label>
           <select onChange={(e) => setCarCategory(e.target.value)} required>
-            <option value="small">small</option>
-            <option value="medium">medium</option>
-            <option value="large">large</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
           </select>
         </div>
         <div>
