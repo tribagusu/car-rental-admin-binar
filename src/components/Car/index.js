@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
+import { useSelector } from "react-redux"
 // func
 import { getCars } from "../../hooks/useFetch"
 // comp
-import CarCard from "./CarList/CarCard"
-import ListHeader from "./CarList/ListHeader"
-import { useSelector } from "react-redux"
+const CarCard = React.lazy(() => import("./CarList/CarCard"))
+const ListHeader = React.lazy(() => import("./CarList/ListHeader"))
 
 const CarList = () => {
   const [page, setPage] = useState(1)
@@ -34,8 +34,12 @@ const CarList = () => {
   return (
     <section className="car-list">
       <main className="car-list-container">
-        <ListHeader {...props} />
-        <CarCard {...props} />
+        <React.Suspense fallback={<div>Loading..</div>}>
+          <ListHeader {...props} />
+        </React.Suspense>
+        <React.Suspense fallback={<div>Loading..</div>}>
+          <CarCard {...props} />
+        </React.Suspense>
       </main>
     </section>
   )

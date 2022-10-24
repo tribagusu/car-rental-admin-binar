@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-
+// func
 import { handleDataOrder } from "../../../redux/actions/dataOrderAction"
-
-//# comp
-import ChartTitle from "./Chart/ChartTitle"
-import ChartFilter from "./Chart/ChartFilter"
-import Chart from "./Chart/Chart"
+// comp
+const ChartTitle = React.lazy(() => import("./Chart/ChartTitle"))
+const ChartFilter = React.lazy(() => import("./Chart/ChartFilter"))
+const Chart = React.lazy(() => import("./Chart/Chart"))
 
 const ChartRented = () => {
   const [monthSelected, setMonthSelected] = useState("")
 
-  //# func
+  // func
   const dispatch = useDispatch()
   const getDataOrder = () => {
     dispatch(handleDataOrder(monthSelected))
@@ -30,8 +29,12 @@ const ChartRented = () => {
   return (
     <>
       <ChartTitle />
-      <ChartFilter {...props} />
-      <Chart />
+      <React.Suspense fallback={<div>Loading..</div>}>
+        <ChartFilter {...props} />
+      </React.Suspense>
+      <React.Suspense fallback={<div>Loading..</div>}>
+        <Chart />
+      </React.Suspense>
     </>
   )
 }

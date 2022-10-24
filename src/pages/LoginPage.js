@@ -1,11 +1,11 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { useNavigate, Navigate, useLocation } from "react-router-dom"
-
-// components
-import Login from "../components/Login"
+import { useNavigate, Navigate } from "react-router-dom"
+// func
 import { handleLogin } from "../redux/actions/authAction"
+
+// comp
+const Login = React.lazy(() => import("../components/Login"))
 
 const LoginPage = () => {
   // state

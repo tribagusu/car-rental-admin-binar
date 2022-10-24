@@ -1,13 +1,11 @@
+import React from "react"
 import { Navigate } from "react-router-dom"
 import { useTransition, animated } from "react-spring"
-//# lazy
-// const Layout = React.lazy(() => import("../../layouts"))
-// const CarList = React.lazy(() => import("../../components/Car/CarList"))
-//# comp
-import CarList from "../../components/Car"
-import NavCars from "../../layouts/Navbar/NavCars"
-//# redux
 import { useSelector } from "react-redux"
+
+// comp
+const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
+const CarList = React.lazy(() => import("../../components/Car"))
 
 const CarsPage = () => {
   const user = localStorage.getItem("token")
@@ -22,18 +20,22 @@ const CarsPage = () => {
 
   return (
     <>
-      {user ? (
+      {!!user ? (
         <>
           <section className="cars-page">
             {transition(
               (style, item) =>
                 item && (
                   <animated.nav style={style} className="nav-container">
-                    <NavCars />
+                    <React.Suspense fallback={<div>Loading..</div>}>
+                      <NavCars />
+                    </React.Suspense>
                   </animated.nav>
                 )
             )}
-            <CarList />
+            <React.Suspense fallback={<div>Loading..</div>}>
+              <CarList />
+            </React.Suspense>
           </section>
         </>
       ) : (

@@ -10,7 +10,6 @@ export const handleLogin = (payload, setErrMsg, navigate) => {
         payload
       )
       .then((res) => {
-        console.log(res)
         localStorage.setItem("token", res.data.access_token)
         dispatch({
           type: TYPES.POST_LOGIN,
@@ -25,7 +24,6 @@ export const handleLogin = (payload, setErrMsg, navigate) => {
         navigate("/dashboard")
       })
       .catch((err) => {
-        console.log(err)
         if (err.response?.status === 404) {
           setErrMsg(true)
         } else if (err.response?.status === 400) {

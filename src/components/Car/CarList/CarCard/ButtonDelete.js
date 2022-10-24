@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 // comp
-import ModalDelete from "./ModalDelete/ModalDelete"
+const ModalDelete = React.lazy(() => import("./ModalDelete/ModalDelete"))
 
 const ButtonDelete = ({ carId }) => {
   const [showModal, setShowModal] = useState(false)
@@ -19,7 +19,11 @@ const ButtonDelete = ({ carId }) => {
       >
         <p>Delete</p>
       </button>
-      {showModal && <ModalDelete carId={carId} handleModal={handleModal} />}
+      {showModal && (
+        <React.Suspense fallback={<div>Loading..</div>}>
+          <ModalDelete carId={carId} handleModal={handleModal} />
+        </React.Suspense>
+      )}
     </>
   )
 }

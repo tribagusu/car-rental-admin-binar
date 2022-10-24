@@ -1,15 +1,12 @@
 import axios from "axios"
 import swal from "sweetalert"
-import access_token from "../../../../../hooks/accessToken"
-
 import { useNavigate } from "react-router-dom"
-
 // asset
 import modalImg from "../../../../../assets/modal-img.png"
+import access_token from "../../../../../hooks/accessToken"
 
 const ModalDelete = (props) => {
   const { handleModal, carId } = props
-
   const navigate = useNavigate()
 
   const handleDelete = (id) => {
@@ -18,7 +15,6 @@ const ModalDelete = (props) => {
         headers: { access_token },
       })
       .then((res) => {
-        console.log(res.status)
         if (res.status === 200) {
           swal({
             title: "Deleted!",

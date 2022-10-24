@@ -3,13 +3,9 @@ import { Navigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useTransition, animated } from "react-spring"
 
-// components
-// const Dashboard = React.lazy(() => import("../components/Dashboard"))
-// const Layout = React.lazy(() => import("../layouts"))
-
 // comp
-import Dashboard from "../components/Dashboard"
-import NavDashboard from "../layouts/Navbar/NavDashboard"
+const Dashboard = React.lazy(() => import("../components/Dashboard"))
+const NavDashboard = React.lazy(() => import("../layouts/Navbar/NavDashboard"))
 
 const DashboardPage = () => {
   const { showNav } = useSelector((state) => state.showNav)
@@ -22,18 +18,22 @@ const DashboardPage = () => {
 
   return (
     <>
-      {user ? (
+      {!!user ? (
         <main>
           <section className="dashboard-page">
             {transition(
               (style, item) =>
                 item && (
                   <animated.nav style={style} className="nav-container">
-                    <NavDashboard />
+                    <React.Suspense fallback={<div>Loading..</div>}>
+                      <NavDashboard />
+                    </React.Suspense>
                   </animated.nav>
                 )
             )}
-            <Dashboard />
+            <React.Suspense fallback={<div>Loading..</div>}>
+              <Dashboard />
+            </React.Suspense>
           </section>
         </main>
       ) : (

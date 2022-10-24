@@ -2,9 +2,9 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-//# comp
-import NavCars from "../../layouts/Navbar/NavCars"
-import CarAddNew from "../../components/Car/CarAddNew"
+// comp
+const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
+const CarAddNew = React.lazy(() => import("../../components/Car/CarAddNew"))
 
 const AddCarPage = () => {
   const user = localStorage.getItem("token")
@@ -12,15 +12,19 @@ const AddCarPage = () => {
 
   return (
     <>
-      {user ? (
+      {!!user ? (
         <main>
           <section className="add-car-page">
             {showNav && (
               <nav className="nav-container">
-                <NavCars />
+                <React.Suspense fallback={<div>Loading..</div>}>
+                  <NavCars />
+                </React.Suspense>
               </nav>
             )}
-            <CarAddNew />
+            <React.Suspense fallback={<div>Loading..</div>}>
+              <CarAddNew />
+            </React.Suspense>
           </section>
         </main>
       ) : (
