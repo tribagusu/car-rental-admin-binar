@@ -1,12 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
-// func
-import { formatCurrency } from "../../../../utils/formatCurrency"
-// library
 import { DateTime } from "luxon"
 import { UilUsersAlt, UilClock } from "@iconscout/react-unicons"
-// asset
 import noImage from "../../../../assets/no-image.png"
+// func
+import { formatCurrency } from "../../../../utils/formatCurrency"
 // comp
 import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
