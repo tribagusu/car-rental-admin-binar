@@ -1,14 +1,18 @@
-import { useState, useCallback, useMemo } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { atom, useAtom } from "jotai"
 // icons
 import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
 // redux
 import { useDispatch, useSelector } from "react-redux"
 import TYPES from "../redux/types"
 
+export const searchQueryAtom = atom("")
+
 const Header = () => {
   const [showProfile, setShowProfile] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
+
+  const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom)
 
   // redux state
   const { showNav } = useSelector((state) => state.showNav)
@@ -31,18 +35,18 @@ const Header = () => {
 
   // search function
   const handleQuery = (e) => {
-    setSearchQuery(e.target.value)
+    setSearchQuery(e?.target?.value)
   }
 
   const handleSearch = (e) => {
-    if (searchQuery.length === 0) {
-      setSearchQuery("")
-    }
+    // if (searchQuery.length === 0) {
+    //   setSearchQuery("")
+    // }
     e.preventDefault()
-    dispatch({
-      type: TYPES.SEARCH_QUERY,
-      payload: searchQuery,
-    })
+    // dispatch({
+    //   type: TYPES.SEARCH_QUERY,
+    //   payload: searchQuery,
+    // })
   }
 
   return (

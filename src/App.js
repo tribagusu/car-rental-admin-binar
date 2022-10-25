@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { Provider } from "jotai"
 
 // pages
 import DashboardPage from "./pages/DashboardPage"
@@ -14,16 +15,18 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Routes>
-          <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="cars" element={<CarsPage />} />
-          <Route path="cars/add-car" element={<AddCarPage />} />
-          <Route path="cars/edit-car/:id" element={<EditCarPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="*" element={<Navigate to="dashboard" replace />} />
-        </Routes>
-      </Layout>
+      <Provider>
+        <Layout>
+          <Routes>
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="cars" element={<CarsPage />} />
+            <Route path="cars/add-car" element={<AddCarPage />} />
+            <Route path="cars/edit-car/:id" element={<EditCarPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="*" element={<Navigate to="dashboard" replace />} />
+          </Routes>
+        </Layout>
+      </Provider>
     </QueryClientProvider>
   )
 }
