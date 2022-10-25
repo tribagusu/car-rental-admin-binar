@@ -1,6 +1,7 @@
 import React from "react"
 import { Navigate } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useAtom } from "jotai"
+import { showNavAtom } from "../../layouts/Header"
 
 // comp
 const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
@@ -8,7 +9,7 @@ const CarEdit = React.lazy(() => import("../../components/Car/CarEdit"))
 
 const EditCarPage = () => {
   const user = localStorage.getItem("token")
-  const { showNav } = useSelector((state) => state.showNav)
+  const [showNav] = useAtom(showNavAtom)
 
   return (
     <>
