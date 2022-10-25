@@ -2,6 +2,9 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 import { useTransition, animated } from "react-spring"
 import { useSelector } from "react-redux"
+import { useAtom } from "jotai"
+// func
+import { showNavAtom } from "../../layouts/Header"
 
 // comp
 const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
@@ -9,7 +12,8 @@ const CarList = React.lazy(() => import("../../components/Car"))
 
 const CarsPage = () => {
   const user = localStorage.getItem("token")
-  const { showNav } = useSelector((state) => state.showNav)
+  // const { showNav } = useSelector((state) => state.showNav)
+  const [showNav] = useAtom(showNavAtom)
 
   // navbar animation
   const transition = useTransition(showNav, {

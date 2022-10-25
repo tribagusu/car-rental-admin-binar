@@ -3,28 +3,15 @@ import { useNavigate } from "react-router-dom"
 import { atom, useAtom } from "jotai"
 // icons
 import { UilBars, UilAngleDown } from "@iconscout/react-unicons"
-// redux
-import { useDispatch, useSelector } from "react-redux"
-import TYPES from "../redux/types"
 
+// exports
 export const searchQueryAtom = atom("")
+export const showNavAtom = atom(true)
 
 const Header = () => {
   const [showProfile, setShowProfile] = useState(false)
-
   const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom)
-
-  // redux state
-  const { showNav } = useSelector((state) => state.showNav)
-  const dispatch = useDispatch()
-
-  // show navigation
-  const handleShowNav = () => {
-    dispatch({
-      type: TYPES.SHOW_NAV,
-      payload: !showNav,
-    })
-  }
+  const [showNav, setShowNav] = useAtom(showNavAtom)
 
   // logout function
   const navigate = useNavigate()
@@ -33,34 +20,28 @@ const Header = () => {
     navigate("/login")
   }
 
-  // search function
-  const handleQuery = (e) => {
-    setSearchQuery(e?.target?.value)
-  }
-
-  const handleSearch = (e) => {
-    // if (searchQuery.length === 0) {
-    //   setSearchQuery("")
-    // }
-    e.preventDefault()
-    // dispatch({
-    //   type: TYPES.SEARCH_QUERY,
-    //   payload: searchQuery,
-    // })
-  }
-
   return (
     <header className="header p-0">
       <div className="header header-container">
         <div className="header-left df-center">
           <div className="header-logo"></div>
-          <div onClick={handleShowNav} className="menu-icon df-center">
+          <div
+            onClick={() => setShowNav(!showNav)}
+            className="menu-icon df-center"
+          >
             <UilBars />
           </div>
         </div>
         <div className="header-main df-center">
-          <form onSubmit={handleSearch} className="header-search df-center">
-            <input onChange={handleQuery} type="search" placeholder="Search" />
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="header-search df-center"
+          >
+            <input
+              onChange={(e) => setSearchQuery(e?.target?.value)}
+              type="search"
+              placeholder="Search"
+            />
             <button className="btn-outlined-primary">Search</button>
           </form>
           <div className="header-user">

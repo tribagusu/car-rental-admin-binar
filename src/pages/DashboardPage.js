@@ -1,14 +1,16 @@
 import React from "react"
 import { Navigate } from "react-router-dom"
-import { useSelector } from "react-redux"
 import { useTransition, animated } from "react-spring"
+import { useAtom } from "jotai"
+// func
+import { showNavAtom } from "../layouts/Header"
 
 // comp
 const Dashboard = React.lazy(() => import("../components/Dashboard"))
 const NavDashboard = React.lazy(() => import("../layouts/Navbar/NavDashboard"))
 
 const DashboardPage = () => {
-  const { showNav } = useSelector((state) => state.showNav)
+  const [showNav] = useAtom(showNavAtom)
   const user = localStorage.getItem("token")
   const transition = useTransition(showNav, {
     from: { x: -100, y: 0, opacity: 0 },
