@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-
 // comp
 const ModalDelete = React.lazy(() => import("./ModalDelete/ModalDelete"))
 
@@ -8,7 +7,6 @@ const ButtonDelete = ({ carId }) => {
 
   const handleModal = () => {
     setShowModal(!showModal)
-    console.log(carId)
   }
 
   return (
