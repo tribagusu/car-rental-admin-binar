@@ -7,9 +7,7 @@ import modalImg from "../../../../../assets/modal-img.png"
 const ModalDelete = ({ handleModal, carId }) => {
   const navigate = useNavigate()
 
-  const handleDelete = () => {
-    postDeleteCar(carId, handleModal, navigate)
-  }
+  const handleDelete = () => postDeleteCar(carId, handleModal, navigate)
 
   return (
     <div className="modal-delete__backdrop df-center">

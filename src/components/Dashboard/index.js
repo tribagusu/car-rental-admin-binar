@@ -1,5 +1,4 @@
 import React from "react"
-
 // comp
 const Breadcrumb = React.lazy(() => import("./Breadcrumb"))
 const ChartRented = React.lazy(() => import("./ChartRented"))

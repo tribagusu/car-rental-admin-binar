@@ -7,7 +7,8 @@ import { showNavAtom } from "../../layouts/Header"
 import { navAnimation } from "../../utils/navAnimation"
 
 // comp
-const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
+import NavCars from "../../layouts/Navbar/NavCars"
+// const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
 const CarList = React.lazy(() => import("../../components/Car"))
 
 const CarsPage = () => {
@@ -24,9 +25,9 @@ const CarsPage = () => {
               (style, item) =>
                 item && (
                   <animated.nav style={style} className="nav-container">
-                    <React.Suspense fallback={<div>Loading..</div>}>
-                      <NavCars />
-                    </React.Suspense>
+                    {/* <React.Suspense fallback={<div>Loading..</div>}> */}
+                    <NavCars />
+                    {/* </React.Suspense> */}
                   </animated.nav>
                 )
             )}

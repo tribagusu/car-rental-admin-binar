@@ -2,9 +2,9 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 import { useAtom } from "jotai"
 import { showNavAtom } from "../../layouts/Header"
-
 // comp
-const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
+import NavCars from "../../layouts/Navbar/NavCars"
+// const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
 const CarAddNew = React.lazy(() => import("../../components/Car/CarAddNew"))
 
 const AddCarPage = () => {
@@ -18,9 +18,9 @@ const AddCarPage = () => {
           <section className="add-car-page">
             {showNav && (
               <nav className="nav-container">
-                <React.Suspense fallback={<div>Loading..</div>}>
-                  <NavCars />
-                </React.Suspense>
+                {/* <React.Suspense fallback={<div>Loading..</div>}> */}
+                <NavCars />
+                {/* </React.Suspense> */}
               </nav>
             )}
             <React.Suspense fallback={<div>Loading..</div>}>

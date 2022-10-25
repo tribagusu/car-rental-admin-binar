@@ -4,7 +4,8 @@ import { useAtom } from "jotai"
 import { showNavAtom } from "../../layouts/Header"
 
 // comp
-const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
+import NavCars from "../../layouts/Navbar/NavCars"
+// const NavCars = React.lazy(() => import("../../layouts/Navbar/NavCars"))
 const CarEdit = React.lazy(() => import("../../components/Car/CarEdit"))
 
 const EditCarPage = () => {
@@ -18,9 +19,9 @@ const EditCarPage = () => {
           <section className="edit-car-page">
             {showNav && (
               <nav className="nav-container">
-                <React.Suspense fallback={<div>Loading..</div>}>
-                  <NavCars />
-                </React.Suspense>
+                {/* <React.Suspense fallback={<div>Loading..</div>}> */}
+                <NavCars />
+                {/* </React.Suspense> */}
               </nav>
             )}
             <React.Suspense fallback={<div>Loading..</div>}>

@@ -4,10 +4,7 @@ const ModalDelete = React.lazy(() => import("./ModalDelete/ModalDelete"))
 
 const ButtonDelete = ({ carId }) => {
   const [showModal, setShowModal] = useState(false)
-
-  const handleModal = () => {
-    setShowModal(!showModal)
-  }
+  const handleModal = () => setShowModal(!showModal)
 
   return (
     <>
