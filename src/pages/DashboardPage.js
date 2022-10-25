@@ -4,6 +4,7 @@ import { useTransition, animated } from "react-spring"
 import { useAtom } from "jotai"
 // func
 import { showNavAtom } from "../layouts/Header"
+import { navAnimation } from "../utils/navAnimation"
 
 // comp
 const Dashboard = React.lazy(() => import("../components/Dashboard"))
@@ -12,18 +13,14 @@ const NavDashboard = React.lazy(() => import("../layouts/Navbar/NavDashboard"))
 const DashboardPage = () => {
   const [showNav] = useAtom(showNavAtom)
   const user = localStorage.getItem("token")
-  const transition = useTransition(showNav, {
-    from: { x: -100, y: 0, opacity: 0 },
-    enter: { x: 0, y: 0, opacity: 1 },
-    delay: 0,
-  })
+  const navTransition = useTransition(showNav, navAnimation)
 
   return (
     <>
       {!!user ? (
         <main>
           <section className="dashboard-page">
-            {transition(
+            {navTransition(
               (style, item) =>
                 item && (
                   <animated.nav style={style} className="nav-container">
