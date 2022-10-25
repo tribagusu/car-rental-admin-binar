@@ -11,7 +11,6 @@ export const postAddCar = (data, navigate) => {
       },
     })
     .then((res) => {
-      console.log(res)
       if (res.status === 201) {
         swal({
           title: "Saved!",

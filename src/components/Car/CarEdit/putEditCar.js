@@ -8,7 +8,6 @@ export const putEditCar = (data, navigate, id) => {
       headers: { access_token },
     })
     .then((res) => {
-      console.log(res.status)
       if (res.status === 200) {
         swal({
           title: "Saved!",

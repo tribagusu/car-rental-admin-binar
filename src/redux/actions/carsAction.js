@@ -11,7 +11,6 @@ export const handleCars = (page) => (dispatch) => {
       }
     )
     .then((res) => {
-      console.log(res.data)
       dispatch({
         type: TYPES.GET_CARS,
         payload: res.data.cars,
@@ -45,7 +44,6 @@ export const handleOrders = (page, rowsPerPage) => (dispatch) => {
       }
     )
     .then((res) => {
-      // console.log(res)
       dispatch({
         type: TYPES.GET_ORDERS,
         payload: res.data.orders,
