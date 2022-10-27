@@ -5,7 +5,8 @@ import { useNavigate, Navigate } from "react-router-dom"
 import { handleLogin } from "../redux/actions/authAction"
 
 // comp
-const Login = React.lazy(() => import("../components/Login"))
+import Login from "../components/Login"
+// const Login = React.lazy(() => import("../components/Login"))
 
 const LoginPage = () => {
   // state
